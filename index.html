@@ -64,7 +64,7 @@ h2.section-title .accent{background:linear-gradient(90deg,var(--gold),#f5e070);-
 .tag{display:inline-block;padding:4px 14px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.25);border-radius:20px;font-size:0.74em;color:var(--gold);}
 .tourism{background:#060a14;}
 .tourism-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:52px;}
-.tourism-card{border-radius:18px;overflow:hidden;position:relative;cursor:default;}
+.tourism-card{border-radius:18px;overflow:hidden;position:relative;}
 .tourism-card img{width:100%;height:280px;object-fit:cover;display:block;transition:transform 0.5s;}
 .tourism-card:hover img{transform:scale(1.06);}
 .tourism-overlay{position:absolute;bottom:0;left:0;right:0;padding:28px;background:linear-gradient(transparent,rgba(0,0,0,0.88));}
@@ -89,8 +89,7 @@ h2.section-title .accent{background:linear-gradient(90deg,var(--gold),#f5e070);-
 .pillars li::before{content:'◆';color:var(--gold);font-size:0.6em;flex-shrink:0;}
 .presence{background:var(--dark);}
 .presence-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:52px;}
-.region-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;overflow:hidden;transition:all 0.3s;}
-.region-card:hover{border-color:rgba(201,168,76,0.3);}
+.region-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;overflow:hidden;}
 .region-placeholder{width:100%;height:150px;display:flex;align-items:center;justify-content:center;font-size:3em;background:rgba(255,255,255,0.02);}
 .region-body{padding:22px;}
 .region-body h3{font-size:0.95em;font-weight:700;color:var(--gold);margin-bottom:14px;text-transform:uppercase;letter-spacing:0.06em;}
@@ -126,8 +125,8 @@ h2.section-title .accent{background:linear-gradient(90deg,var(--gold),#f5e070);-
 .form input:focus,.form select:focus,.form textarea:focus{border-color:var(--gold);}
 .form select option{background:#0d1b3e;}
 .form textarea{min-height:110px;resize:vertical;}
-.submit-btn{width:100%;padding:15px;background:linear-gradient(135deg,var(--gold),#e8c060);color:#0a0e1a;font-weight:800;font-size:1em;border:none;border-radius:8px;cursor:pointer;letter-spacing:0.04em;transition:opacity 0.2s,transform 0.1s;}
-.submit-btn:hover{opacity:0.9;transform:translateY(-1px);}
+.submit-btn{width:100%;padding:15px;background:linear-gradient(135deg,var(--gold),#e8c060);color:#0a0e1a;font-weight:800;font-size:1em;border:none;border-radius:8px;cursor:pointer;transition:opacity 0.2s;}
+.submit-btn:hover{opacity:0.9;}
 footer{background:#03060e;padding:44px 64px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;border-top:1px solid rgba(201,168,76,0.12);}
 .footer-left{display:flex;align-items:center;gap:14px;}
 .footer-left img{height:44px;border-radius:5px;}
@@ -143,7 +142,7 @@ footer nav a:hover{color:var(--gold);}
 
 <nav>
   <div class="logo">
-    <img src="CIG.PNG" alt="CIG Logo" onerror="this.style.display='none'">
+    <img src="logo.png" alt="CIG Logo" onerror="this.style.display='none'">
     <div class="logo-text"><span>Coordinate</span> International Global</div>
   </div>
   <ul class="nav-links">
@@ -159,7 +158,7 @@ footer nav a:hover{color:var(--gold);}
 
 <section class="hero">
   <video class="hero-video" autoplay muted loop playsinline>
-    <source src="video_Background_hero_lever_du_soleil_et_avion.mp4" type="video/mp4">
+    <source src="video.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
   <div class="hero-content">
@@ -193,7 +192,7 @@ footer nav a:hover{color:var(--gold);}
       <a href="#verticals" class="btn-primary">Explore Our Portfolio →</a>
     </div>
     <div class="vision-img">
-      <img src="TANZANIA.avif" alt="CIG Global Vision" onerror="this.src='https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=800'">
+      <img src="smartcity.jpg" alt="CIG Global Vision" onerror="this.src='https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=800'">
     </div>
   </div>
 </section>
@@ -202,14 +201,14 @@ footer nav a:hover{color:var(--gold);}
   <div class="section-tag">Verticals of Innovation</div>
   <h2 class="section-title">CIG Invests Across<br><span class="accent">High-Growth Sectors</span></h2>
   <div class="divider"></div>
-  <p class="section-sub">CIG invests across high-growth sectors, turning global challenges into scalable, future-ready solutions. Powered by market intelligence and a worldwide network of partners, we deliver sustainable impact from South America's energy corridors to East Africa's rising smart city ecosystems.</p>
+  <p class="section-sub">CIG invests across high-growth sectors, turning global challenges into scalable, future-ready solutions.</p>
   <div class="verticals-grid">
 
     <div class="vertical-card">
-      <img src="ZANZIBAR.avif" alt="Global Tourism" class="vertical-img" onerror="this.outerHTML='<div class=\'vertical-img-placeholder\'>✈️</div>'">
+      <img src="zanzibar.avif" alt="Tourism" class="vertical-img" onerror="this.outerHTML='<div class=\'vertical-img-placeholder\'>✈️</div>'">
       <div class="vertical-body">
         <h3>🌍 Global Tourism Destinations</h3>
-        <p>Capturing long-term growth in luxury, experiential, and sustainable travel by developing high-value tourism ecosystems.</p>
+        <p>Capturing long-term growth in luxury, experiential, and sustainable travel.</p>
         <ul>
           <li>Premium eco-resorts and coastal destinations</li>
           <li>Integrated tourism corridors</li>
@@ -221,10 +220,10 @@ footer nav a:hover{color:var(--gold);}
     </div>
 
     <div class="vertical-card">
-      <img src="TANZANIA.avif" alt="Smart City" class="vertical-img" onerror="this.outerHTML='<div class=\'vertical-img-placeholder\'>🏙️</div>'">
+      <img src="smartcity.jpg" alt="Smart City" class="vertical-img" onerror="this.outerHTML='<div class=\'vertical-img-placeholder\'>🏙️</div>'">
       <div class="vertical-body">
         <h3>🏙️ Smart City Development</h3>
-        <p>Building future-ready cities through integrated digital infrastructure, sustainable design, and human-centered urban planning.</p>
+        <p>Building future-ready cities through integrated digital infrastructure and sustainable design.</p>
         <ul>
           <li>Intelligent mobility systems</li>
           <li>Renewable-powered districts</li>
@@ -236,10 +235,10 @@ footer nav a:hover{color:var(--gold);}
     </div>
 
     <div class="vertical-card">
-      <img src="PETROLE.avif" alt="Energy" class="vertical-img" onerror="this.outerHTML='<div class=\'vertical-img-placeholder\'>⚡</div>'">
+      <img src="petrole.avif" alt="Energy" class="vertical-img" onerror="this.outerHTML='<div class=\'vertical-img-placeholder\'>⚡</div>'">
       <div class="vertical-body">
         <h3>⚡ Sustainable Energy</h3>
-        <p>Accelerating the global transition to clean, reliable, and utility-scale renewable energy across Southeast Asia and Africa.</p>
+        <p>Accelerating the global transition to clean, reliable, and utility-scale renewable energy.</p>
         <ul>
           <li>Utility-scale solar farms</li>
           <li>Hydro-electric generation</li>
@@ -251,10 +250,10 @@ footer nav a:hover{color:var(--gold);}
     </div>
 
     <div class="vertical-card">
-      <img src="Lever du soleil sur le port industriel.png" alt="Maritime Transport" class="vertical-img" onerror="this.outerHTML='<div class=\'vertical-img-placeholder\'>🚢</div>'">
+      <img src="maritime.png" alt="Maritime" class="vertical-img" onerror="this.outerHTML='<div class=\'vertical-img-placeholder\'>🚢</div>'">
       <div class="vertical-body">
         <h3>🚢 Maritime Transport</h3>
-        <p>International freight fleet and port logistics connecting major world ports with efficiency, reliability, and scale.</p>
+        <p>International freight fleet and port logistics connecting major world ports.</p>
         <ul>
           <li>Global freight operations</li>
           <li>Port logistics management</li>
@@ -266,10 +265,10 @@ footer nav a:hover{color:var(--gold);}
     </div>
 
     <div class="vertical-card">
-      <img src="Land___Rail_Transport.png" alt="Land & Rail Transport" class="vertical-img" onerror="this.outerHTML='<div class=\'vertical-img-placeholder\'>🚂</div>'">
+      <img src="rail.png.png" alt="Rail Transport" class="vertical-img" onerror="this.outerHTML='<div class=\'vertical-img-placeholder\'>🚂</div>'">
       <div class="vertical-body">
         <h3>🚂 Land & Rail Transport</h3>
-        <p>Modern rail and road solutions for passenger and freight transport across strategic corridors in the Americas and Africa.</p>
+        <p>Modern rail and road solutions across strategic corridors in the Americas and Africa.</p>
         <ul>
           <li>Rail infrastructure development</li>
           <li>Connected highway systems</li>
@@ -281,10 +280,10 @@ footer nav a:hover{color:var(--gold);}
     </div>
 
     <div class="vertical-card">
-      <img src="Agri-Food.jpg" alt="Agri-Food" class="vertical-img" onerror="this.outerHTML='<div class=\'vertical-img-placeholder\'>🌾</div>'">
+      <img src="agri.jpg" alt="Agri-Food" class="vertical-img" onerror="this.outerHTML='<div class=\'vertical-img-placeholder\'>🌾</div>'">
       <div class="vertical-body">
         <h3>🌾 Agri-Food & Resources</h3>
-        <p>Agricultural investments and sustainable food supply chains in Africa and Latin America for food sovereignty and economic resilience.</p>
+        <p>Agricultural investments and sustainable food supply chains in Africa and Latin America.</p>
         <ul>
           <li>Large-scale agricultural zones</li>
           <li>Sustainable supply chains</li>
@@ -299,27 +298,27 @@ footer nav a:hover{color:var(--gold);}
 </section>
 
 <section class="tourism" id="tourism">
-  <div class="section-tag">Global Tourism & Smart Innovation</div>
+  <div class="section-tag">Global Tourism</div>
   <h2 class="section-title">World-Class<br><span class="accent">Destinations</span></h2>
   <div class="divider"></div>
-  <p class="section-sub">CIG is actively shaping the future of tourism across high-potential regions, transforming natural and cultural assets into sustainable, world-class destinations.</p>
+  <p class="section-sub">CIG shapes the future of tourism across high-potential regions, transforming natural and cultural assets into sustainable, world-class destinations.</p>
   <div class="tourism-grid">
     <div class="tourism-card">
-      <img src="ZANZIBAR.avif" alt="Zanzibar" onerror="this.src='https://images.unsplash.com/photo-1504432842672-1a79f78e4084?w=700'">
+      <img src="zanzibar.avif" alt="Zanzibar" onerror="this.src='https://images.unsplash.com/photo-1504432842672-1a79f78e4084?w=700'">
       <div class="tourism-overlay">
         <h3>🇹🇿 Zanzibar, Tanzania</h3>
         <p>Luxury coastal resorts, marine conservation zones & integrated tourism infrastructure</p>
       </div>
     </div>
     <div class="tourism-card">
-      <img src="guatemala avec ecris.png" alt="Guatemala" onerror="this.src='https://images.unsplash.com/photo-1531968455001-5c5272a41129?w=700'">
+      <img src="guatemala.png" alt="Guatemala" onerror="this.src='https://images.unsplash.com/photo-1531968455001-5c5272a41129?w=700'">
       <div class="tourism-overlay">
         <h3>🇬🇹 Guatemala</h3>
         <p>Cultural tourism, Mayan heritage routes & sustainable adventure travel</p>
       </div>
     </div>
     <div class="tourism-card">
-      <img src="ZANZIBARA.avif" alt="Venezuela" onerror="this.src='https://images.unsplash.com/photo-1518182170546-07661fd94144?w=700'">
+      <img src="tanzania.avif" alt="Venezuela" onerror="this.src='https://images.unsplash.com/photo-1518182170546-07661fd94144?w=700'">
       <div class="tourism-overlay">
         <h3>🇻🇪 Venezuela</h3>
         <p>Eco-tourism corridors, coastal redevelopment & cultural heritage revitalization</p>
@@ -337,22 +336,22 @@ footer nav a:hover{color:var(--gold);}
     <div class="energy-card">
       <div class="energy-icon">☀️</div>
       <h3>Utility-Scale Solar</h3>
-      <p>Large-scale solar farms integrated with national grids across Southeast Asia, delivering clean energy at industrial scale.</p>
+      <p>Large-scale solar farms integrated with national grids across Southeast Asia.</p>
     </div>
     <div class="energy-card">
       <div class="energy-icon">💧</div>
       <h3>Hydro-Electric Power</h3>
-      <p>Hydro-electric corridors supporting regional energy security and rural electrification across Africa.</p>
+      <p>Hydro-electric corridors supporting regional energy security across Africa.</p>
     </div>
     <div class="energy-card">
       <div class="energy-icon">🔋</div>
       <h3>Energy Storage & Grids</h3>
-      <p>Advanced grid stabilization technologies and energy storage solutions for industrial and rural zones.</p>
+      <p>Advanced grid stabilization and energy storage solutions for industrial zones.</p>
     </div>
     <div class="energy-card">
       <div class="energy-icon">🛢️</div>
       <h3>Oil & Gas Operations</h3>
-      <p>Strategic investments in Indonesia, Venezuela, Gabon, and Dubai. Energy exploration, extraction, and distribution.</p>
+      <p>Strategic investments in Indonesia, Venezuela, Gabon, and Dubai.</p>
     </div>
   </div>
 </section>
@@ -363,18 +362,18 @@ footer nav a:hover{color:var(--gold);}
   <div class="divider"></div>
   <div class="smartcity-inner">
     <div class="smartcity-img">
-      <img src="TANZANIA.avif" alt="Smart City Tanzania" onerror="this.src='https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=800'">
+      <img src="smartcity.jpg" alt="Smart City" onerror="this.src='https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=800'">
     </div>
     <div class="smartcity-text">
       <h3>Future-Ready Urban Ecosystems</h3>
-      <p>CIG develops cutting-edge smart city projects that merge technology, sustainability, and modern living — creating urban environments that are efficient, resilient, and designed for the future.</p>
-      <p>Our smart city initiatives elevate quality of life, attract global investment, and support governments in building future-ready urban ecosystems across Africa and Asia.</p>
+      <p>CIG develops cutting-edge smart city projects that merge technology, sustainability, and modern living.</p>
+      <p>Our initiatives elevate quality of life, attract global investment, and support governments in building future-ready urban ecosystems across Africa and Asia.</p>
       <ul class="pillars">
         <li>Digital infrastructure & IoT-enabled services</li>
-        <li>Smart mobility & integrated transport systems</li>
+        <li>Smart mobility & integrated transport</li>
         <li>Renewable-powered urban districts</li>
         <li>Modern housing with sustainable design</li>
-        <li>E-governance platforms & digital public services</li>
+        <li>E-governance & digital public services</li>
         <li>Smart grids & resilient infrastructure</li>
       </ul>
       <br>
@@ -387,7 +386,7 @@ footer nav a:hover{color:var(--gold);}
   <div class="section-tag">Our Global Footprint</div>
   <h2 class="section-title">CIG Around<br><span class="accent">the World</span></h2>
   <div class="divider"></div>
-  <p class="section-sub">Present on four continents, our offices and operations cover key high-growth markets across Asia, the Americas, and Africa.</p>
+  <p class="section-sub">Present on four continents, our offices and operations cover key high-growth markets.</p>
   <div class="presence-grid">
     <div class="region-card">
       <div class="region-placeholder">🌏</div>
@@ -445,37 +444,37 @@ footer nav a:hover{color:var(--gold);}
   <div class="section-tag">Why CIG</div>
   <h2 class="section-title">The <span class="accent">CIG Difference</span></h2>
   <div class="divider"></div>
-  <p class="section-sub">CIG stands at the intersection of investment, innovation, and sustainability. We don't just build projects — we build national assets that endure.</p>
+  <p class="section-sub">We don't just build projects — we build national assets that endure.</p>
   <div class="value-grid">
     <div class="value-card">
       <div class="value-icon">📊</div>
       <h3>Market Intelligence</h3>
-      <p>Data-driven insights to identify high-growth opportunities across emerging markets worldwide.</p>
+      <p>Data-driven insights to identify high-growth opportunities across emerging markets.</p>
     </div>
     <div class="value-card">
       <div class="value-icon">🤝</div>
       <h3>Global Network</h3>
-      <p>Partnerships with governments, financial institutions, and private sector leaders across 20+ countries.</p>
+      <p>Partnerships with governments, financial institutions, and private sector leaders.</p>
     </div>
     <div class="value-card">
       <div class="value-icon">🌱</div>
       <h3>Sustainable Design</h3>
-      <p>Long-term planning aligned with environmental and social priorities for lasting impact.</p>
+      <p>Long-term planning aligned with environmental and social priorities.</p>
     </div>
     <div class="value-card">
       <div class="value-icon">💰</div>
       <h3>Investment Structuring</h3>
-      <p>Blended finance models that reduce risk and maximize returns for all stakeholders.</p>
+      <p>Blended finance models that reduce risk and maximize returns.</p>
     </div>
     <div class="value-card">
       <div class="value-icon">🏛️</div>
       <h3>Government Alignment</h3>
-      <p>Projects designed to support national strategies and long-term development commitments.</p>
+      <p>Projects designed to support national strategies and development commitments.</p>
     </div>
     <div class="value-card">
       <div class="value-icon">🚀</div>
       <h3>Scalable Solutions</h3>
-      <p>Future-ready infrastructure built to grow with emerging economies and evolving global needs.</p>
+      <p>Future-ready infrastructure built to grow with emerging economies.</p>
     </div>
   </div>
 </section>
@@ -486,12 +485,12 @@ footer nav a:hover{color:var(--gold);}
   <div class="divider"></div>
   <div class="hq-inner">
     <div class="hq-img">
-      <img src="Headquarters_KL.png" alt="CIG Headquarters Kuala Lumpur" onerror="this.src='https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=800'">
+      <img src="hq.png.png" alt="CIG Headquarters" onerror="this.src='https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=800'">
     </div>
     <div class="hq-text">
       <h3>The Heart of CIG's Global Operations</h3>
       <p>At the heart of Southeast Asia, our headquarters in Kuala Lumpur serves as the strategic coordination center for all our global operations across four continents.</p>
-      <p>CIG chose Kuala Lumpur for its international connectivity, economic stability, and proximity to emerging Asian markets — a perfect hub for a globally ambitious multinational investment group.</p>
+      <p>CIG chose Kuala Lumpur for its international connectivity, economic stability, and proximity to emerging Asian markets.</p>
       <div class="hq-info">
         <div class="hq-info-item"><span>📍</span><div>Location: <strong>Kuala Lumpur, Malaysia</strong></div></div>
         <div class="hq-info-item"><span>🕐</span><div>Time Zone: <strong>UTC+8</strong></div></div>
@@ -506,7 +505,7 @@ footer nav a:hover{color:var(--gold);}
   <div class="section-tag">Get In Touch</div>
   <h2 class="section-title">Partners &amp;<br><span class="accent">Investors</span></h2>
   <div class="divider"></div>
-  <p class="section-sub">Would you like to collaborate with CIG or learn more about our investment opportunities? Our team is at your disposal.</p>
+  <p class="section-sub">Would you like to collaborate with CIG or learn more about our investment opportunities?</p>
   <div class="contact-grid">
     <div class="contact-info">
       <h3>Contact Information</h3>
@@ -514,7 +513,6 @@ footer nav a:hover{color:var(--gold);}
       <div class="contact-item"><div class="contact-icon">🌐</div><div><p>Global Presence<br><strong>4 Continents · 20+ Countries</strong></p></div></div>
       <div class="contact-item"><div class="contact-icon">✉️</div><div><p>General Email<br><strong>info@cig-global.com</strong></p></div></div>
       <div class="contact-item"><div class="contact-icon">🏢</div><div><p>Sectors<br><strong>Transport · Energy · Tourism · Smart Cities</strong></p></div></div>
-      <div class="contact-item"><div class="contact-icon">🤝</div><div><p>Partnerships<br><strong>Government · Private Sector · Finance</strong></p></div></div>
     </div>
     <div class="form">
       <input type="text" placeholder="Full name">
@@ -541,7 +539,7 @@ footer nav a:hover{color:var(--gold);}
 
 <footer>
   <div class="footer-left">
-    <img src="CIG.PNG" alt="CIG" onerror="this.style.display='none'">
+    <img src="logo.png" alt="CIG" onerror="this.style.display='none'">
     <div>
       <div class="footer-brand">Coordinate International Global</div>
       <div class="footer-brand"><p>Headquarters: Kuala Lumpur, Malaysia</p></div>
