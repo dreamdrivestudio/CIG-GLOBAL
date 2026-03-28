@@ -9,17 +9,11 @@
 :root{--gold:#c9a84c;--dark:#0a0e1a;--navy:#0d1b3e;}
 body{font-family:'Segoe UI',sans-serif;color:#fff;background:var(--dark);cursor:none;}
 html{scroll-behavior:smooth;}
-
-/* CUSTOM CURSOR */
 .cursor{position:fixed;width:12px;height:12px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:transform 0.1s,background 0.2s;mix-blend-mode:difference;}
 .cursor-follower{position:fixed;width:36px;height:36px;border:1.5px solid var(--gold);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:all 0.12s ease;opacity:0.6;}
 .cursor.click{transform:translate(-50%,-50%) scale(2);}
 .cursor-follower.click{transform:translate(-50%,-50%) scale(0.5);}
-
-/* SCROLL PROGRESS BAR */
 .scroll-progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold),#f5e070);z-index:9999;width:0%;transition:width 0.1s;}
-
-/* NAV */
 nav{position:fixed;top:0;width:100%;background:rgba(10,14,26,0.97);backdrop-filter:blur(16px);padding:14px 48px;display:flex;justify-content:space-between;align-items:center;z-index:1000;border-bottom:1px solid rgba(201,168,76,0.15);transition:all 0.3s;}
 nav.scrolled{padding:10px 48px;background:rgba(10,14,26,0.99);}
 .logo{display:flex;align-items:center;gap:12px;}
@@ -35,18 +29,16 @@ nav.scrolled{padding:10px 48px;background:rgba(10,14,26,0.99);}
 .nav-cta{padding:8px 20px;background:linear-gradient(135deg,var(--gold),#e8c060);color:#000!important;font-weight:700;border-radius:5px;text-decoration:none;font-size:0.82em;transition:transform 0.2s,box-shadow 0.2s;}
 .nav-cta:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(201,168,76,0.35);}
 .nav-cta::after{display:none!important;}
-
-/* HERO */
 .hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:140px 40px 80px;overflow:hidden;}
-.hero-video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.98;}
-.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(10,14,26,0.88),rgba(13,27,62,0.78));z-index:1;}
+.hero-video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.85;}
+.hero-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,rgba(10,14,26,0.45),rgba(13,27,62,0.40));z-index:1;}
 .hero-particles{position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;pointer-events:none;}
 .hero-content{position:relative;z-index:3;max-width:920px;}
 .hero-badge{display:inline-block;padding:6px 22px;border:1px solid var(--gold);border-radius:50px;font-size:0.75em;color:var(--gold);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:28px;animation:fadeInDown 1s ease both;}
 .hero h1{font-size:1.5em;font-weight:900;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;animation:fadeInDown 1s 0.2s ease both;}
 .hero h2{font-size:2.8em;font-weight:800;line-height:1.2;margin-bottom:20px;color:#fff;animation:fadeInUp 1s 0.4s ease both;}
 .hero h2 span{background:linear-gradient(90deg,var(--gold),#f5e070);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-.hero p{font-size:1.05em;color:#a0b0c8;max-width:680px;margin:0 auto 36px;line-height:1.8;animation:fadeInUp 1s 0.6s ease both;}
+.hero p{font-size:1.05em;color:#e0e8f0;max-width:680px;margin:0 auto 36px;line-height:1.8;animation:fadeInUp 1s 0.6s ease both;}
 .hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;animation:fadeInUp 1s 0.8s ease both;}
 .btn-primary{padding:14px 36px;background:linear-gradient(135deg,var(--gold),#e8c060);color:#0a0e1a;font-weight:700;border-radius:6px;text-decoration:none;font-size:0.95em;transition:transform 0.2s,box-shadow 0.2s;position:relative;overflow:hidden;}
 .btn-primary::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);transition:left 0.5s;}
@@ -58,25 +50,19 @@ nav.scrolled{padding:10px 48px;background:rgba(10,14,26,0.99);}
 .stat{flex:1;min-width:150px;text-align:center;padding:0 24px;border-right:1px solid rgba(255,255,255,0.08);}
 .stat:last-child{border-right:none;}
 .stat-num{font-size:2.4em;font-weight:900;color:var(--gold);}
-.stat-label{font-size:0.78em;color:#6080a0;text-transform:uppercase;letter-spacing:0.07em;margin-top:5px;}
-
-/* SCROLL REVEAL */
+.stat-label{font-size:0.78em;color:#a0b0c8;text-transform:uppercase;letter-spacing:0.07em;margin-top:5px;}
 .reveal{opacity:0;transform:translateY(40px);transition:opacity 0.8s ease,transform 0.8s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 .reveal-left{opacity:0;transform:translateX(-40px);transition:opacity 0.8s ease,transform 0.8s ease;}
 .reveal-left.visible{opacity:1;transform:translateX(0);}
 .reveal-right{opacity:0;transform:translateX(40px);transition:opacity 0.8s ease,transform 0.8s ease;}
 .reveal-right.visible{opacity:1;transform:translateX(0);}
-
-/* SECTIONS */
 section{padding:96px 64px;}
 .section-tag{font-size:0.73em;color:var(--gold);text-transform:uppercase;letter-spacing:0.16em;margin-bottom:12px;font-weight:700;}
 h2.section-title{font-size:2.3em;font-weight:800;margin-bottom:18px;line-height:1.2;}
 h2.section-title .accent{background:linear-gradient(90deg,var(--gold),#f5e070);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
 .section-sub{color:#7090b0;font-size:1em;line-height:1.8;max-width:680px;margin-bottom:12px;}
 .divider{width:56px;height:3px;background:linear-gradient(90deg,var(--gold),#f5e070);border-radius:2px;margin:20px 0 40px;}
-
-/* VISION */
 .vision{background:#060a14;}
 .vision-inner{display:flex;gap:64px;align-items:center;flex-wrap:wrap;margin-top:48px;}
 .vision-text{flex:1;min-width:300px;}
@@ -85,8 +71,6 @@ h2.section-title .accent{background:linear-gradient(90deg,var(--gold),#f5e070);-
 .vision-img img{width:100%;height:380px;object-fit:cover;display:block;transition:transform 0.6s ease;}
 .vision-img:hover img{transform:scale(1.05);}
 .vision-img::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,0.1),transparent);pointer-events:none;}
-
-/* VERTICALS */
 .verticals{background:var(--dark);}
 .verticals-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;margin-top:52px;}
 .vertical-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:18px;overflow:hidden;transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);position:relative;}
@@ -103,8 +87,6 @@ h2.section-title .accent{background:linear-gradient(90deg,var(--gold),#f5e070);-
 .vertical-body ul li{font-size:0.84em;color:#7090a8;padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.04);display:flex;align-items:flex-start;gap:8px;}
 .vertical-body ul li::before{content:'›';color:var(--gold);font-weight:700;flex-shrink:0;}
 .tag{display:inline-block;padding:4px 14px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.25);border-radius:20px;font-size:0.74em;color:var(--gold);}
-
-/* TOURISM */
 .tourism{background:#060a14;}
 .tourism-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:52px;}
 .tourism-card{border-radius:18px;overflow:hidden;position:relative;cursor:pointer;}
@@ -114,8 +96,6 @@ h2.section-title .accent{background:linear-gradient(90deg,var(--gold),#f5e070);-
 .tourism-card:hover .tourism-overlay{transform:translateY(0);}
 .tourism-overlay h3{font-size:1.25em;font-weight:700;margin-bottom:6px;}
 .tourism-overlay p{font-size:0.85em;color:#b0bcc8;line-height:1.6;}
-
-/* ENERGY */
 .energy{background:var(--dark);}
 .energy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:52px;}
 .energy-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:28px;transition:all 0.3s;position:relative;overflow:hidden;}
@@ -125,8 +105,6 @@ h2.section-title .accent{background:linear-gradient(90deg,var(--gold),#f5e070);-
 .energy-icon{font-size:2.2em;margin-bottom:14px;}
 .energy-card h3{font-size:1.05em;font-weight:700;margin-bottom:10px;color:#e0e8f0;}
 .energy-card p{font-size:0.86em;color:#6080a0;line-height:1.7;}
-
-/* SMART CITY */
 .smartcity{background:#060a14;}
 .smartcity-inner{display:flex;gap:64px;align-items:center;flex-wrap:wrap;margin-top:52px;}
 .smartcity-img{flex:1;min-width:300px;border-radius:18px;overflow:hidden;border:1px solid rgba(201,168,76,0.15);position:relative;}
@@ -139,8 +117,6 @@ h2.section-title .accent{background:linear-gradient(90deg,var(--gold),#f5e070);-
 .pillars li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:0.88em;color:#8090a8;display:flex;align-items:center;gap:10px;transition:color 0.2s,padding-left 0.2s;}
 .pillars li:hover{color:#c0d0e0;padding-left:8px;}
 .pillars li::before{content:'◆';color:var(--gold);font-size:0.6em;flex-shrink:0;}
-
-/* PRESENCE */
 .presence{background:var(--dark);}
 .presence-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:52px;}
 .region-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;overflow:hidden;transition:all 0.3s;}
@@ -153,8 +129,6 @@ h2.section-title .accent{background:linear-gradient(90deg,var(--gold),#f5e070);-
 .country-list li:hover{color:#c0d0e0;padding-left:6px;}
 .country-list li:last-child{border-bottom:none;}
 .country-list li::before{content:'›';color:var(--gold);font-weight:700;}
-
-/* VALUE */
 .value{background:#060a14;}
 .value-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:52px;}
 .value-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:28px;text-align:center;transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);position:relative;overflow:hidden;}
@@ -165,8 +139,6 @@ h2.section-title .accent{background:linear-gradient(90deg,var(--gold),#f5e070);-
 .value-card:hover .value-icon{transform:scale(1.2) rotate(5deg);}
 .value-card h3{font-size:1em;font-weight:700;margin-bottom:10px;color:#e0e8f0;}
 .value-card p{font-size:0.84em;color:#6080a0;line-height:1.7;}
-
-/* HQ */
 .hq{background:var(--dark);}
 .hq-inner{display:flex;gap:64px;align-items:center;flex-wrap:wrap;margin-top:52px;}
 .hq-img{flex:1;min-width:300px;border-radius:18px;overflow:hidden;border:1px solid rgba(201,168,76,0.2);position:relative;}
@@ -179,8 +151,6 @@ h2.section-title .accent{background:linear-gradient(90deg,var(--gold),#f5e070);-
 .hq-info-item{display:flex;align-items:center;gap:12px;font-size:0.88em;color:#8090a8;padding:10px 14px;border-radius:8px;transition:background 0.2s;}
 .hq-info-item:hover{background:rgba(255,255,255,0.03);}
 .hq-info-item strong{color:#c0d0e0;}
-
-/* CONTACT */
 .contact{background:linear-gradient(135deg,#060a14,var(--navy));}
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:52px;}
 .contact-info h3{font-size:1.1em;font-weight:700;margin-bottom:24px;color:#e0e0f0;}
@@ -197,8 +167,6 @@ h2.section-title .accent{background:linear-gradient(90deg,var(--gold),#f5e070);-
 .submit-btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);transition:left 0.5s;}
 .submit-btn:hover::before{left:100%;}
 .submit-btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(201,168,76,0.45);}
-
-/* FOOTER */
 footer{background:#03060e;padding:44px 64px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;border-top:1px solid rgba(201,168,76,0.12);}
 .footer-left{display:flex;align-items:center;gap:14px;}
 .footer-left img{height:44px;border-radius:5px;}
@@ -208,27 +176,15 @@ footer nav{position:static;background:none;backdrop-filter:none;border:none;padd
 footer nav a{color:#405060;font-size:0.8em;text-decoration:none;transition:color 0.2s;}
 footer nav a:hover{color:var(--gold);}
 .footer-copy{font-size:0.78em;color:#2a3a4a;width:100%;text-align:center;padding-top:20px;border-top:1px solid rgba(255,255,255,0.04);margin-top:8px;}
-
-/* ANIMATIONS */
+.gold-line{width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0.3;}
 @keyframes fadeInDown{from{opacity:0;transform:translateY(-30px);}to{opacity:1;transform:translateY(0);}}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
-@keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
-@keyframes pulse{0%,100%{opacity:0.4;transform:scale(1);}50%{opacity:0.8;transform:scale(1.05);}}
-
-/* PARTICLES */
-.particle{position:absolute;border-radius:50%;background:var(--gold);opacity:0.15;animation:float 6s ease-in-out infinite;}
-
-/* GLOWING GOLD LINE */
-.gold-line{width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:0;opacity:0.3;}
 </style>
 </head>
 <body>
 
-<!-- CUSTOM CURSOR -->
 <div class="cursor" id="cursor"></div>
 <div class="cursor-follower" id="cursorFollower"></div>
-
-<!-- SCROLL PROGRESS -->
 <div class="scroll-progress" id="scrollProgress"></div>
 
 <nav id="navbar">
@@ -301,87 +257,27 @@ footer nav a:hover{color:var(--gold);}
   <div class="verticals-grid">
     <div class="vertical-card reveal">
       <img src="zanzibar.avif" alt="Tourism" class="vertical-img" onerror="this.outerHTML='<div class=\'vertical-img-placeholder\'>✈️</div>'">
-      <div class="vertical-body">
-        <h3>🌍 Global Tourism Destinations</h3>
-        <p>Capturing long-term growth in luxury, experiential, and sustainable travel.</p>
-        <ul>
-          <li>Premium eco-resorts and coastal destinations</li>
-          <li>Integrated tourism corridors</li>
-          <li>Public–private partnerships</li>
-          <li>Cultural preservation models</li>
-        </ul>
-        <span class="tag">Zanzibar · Guatemala · Venezuela</span>
-      </div>
+      <div class="vertical-body"><h3>🌍 Global Tourism Destinations</h3><p>Capturing long-term growth in luxury, experiential, and sustainable travel.</p><ul><li>Premium eco-resorts and coastal destinations</li><li>Integrated tourism corridors</li><li>Public–private partnerships</li><li>Cultural preservation models</li></ul><span class="tag">Zanzibar · Guatemala · Venezuela</span></div>
     </div>
     <div class="vertical-card reveal">
       <img src="smartcity.png" alt="Smart City" class="vertical-img" onerror="this.outerHTML='<div class=\'vertical-img-placeholder\'>🏙️</div>'">
-      <div class="vertical-body">
-        <h3>🏙️ Smart City Development</h3>
-        <p>Building future-ready cities through integrated digital infrastructure and sustainable design.</p>
-        <ul>
-          <li>Intelligent mobility systems</li>
-          <li>Renewable-powered districts</li>
-          <li>Digital governance platforms</li>
-          <li>Smart grids & IoT networks</li>
-        </ul>
-        <span class="tag">Africa · Asia · Americas</span>
-      </div>
+      <div class="vertical-body"><h3>🏙️ Smart City Development</h3><p>Building future-ready cities through integrated digital infrastructure and sustainable design.</p><ul><li>Intelligent mobility systems</li><li>Renewable-powered districts</li><li>Digital governance platforms</li><li>Smart grids & IoT networks</li></ul><span class="tag">Africa · Asia · Americas</span></div>
     </div>
     <div class="vertical-card reveal">
       <img src="petrole.avif" alt="Energy" class="vertical-img" onerror="this.outerHTML='<div class=\'vertical-img-placeholder\'>⚡</div>'">
-      <div class="vertical-body">
-        <h3>⚡ Sustainable Energy</h3>
-        <p>Accelerating the global transition to clean, reliable, and utility-scale renewable energy.</p>
-        <ul>
-          <li>Utility-scale solar farms</li>
-          <li>Hydro-electric generation</li>
-          <li>Hybrid renewable systems</li>
-          <li>Energy storage technologies</li>
-        </ul>
-        <span class="tag">Indonesia · Gabon · Africa</span>
-      </div>
+      <div class="vertical-body"><h3>⚡ Sustainable Energy</h3><p>Accelerating the global transition to clean, reliable, and utility-scale renewable energy.</p><ul><li>Utility-scale solar farms</li><li>Hydro-electric generation</li><li>Hybrid renewable systems</li><li>Energy storage technologies</li></ul><span class="tag">Indonesia · Gabon · Africa</span></div>
     </div>
     <div class="vertical-card reveal">
       <img src="maritime.png" alt="Maritime" class="vertical-img" onerror="this.outerHTML='<div class=\'vertical-img-placeholder\'>🚢</div>'">
-      <div class="vertical-body">
-        <h3>🚢 Maritime Transport</h3>
-        <p>International freight fleet and port logistics connecting major world ports.</p>
-        <ul>
-          <li>Global freight operations</li>
-          <li>Port logistics management</li>
-          <li>Supply chain optimization</li>
-          <li>Strategic port partnerships</li>
-        </ul>
-        <span class="tag">Global Logistics</span>
-      </div>
+      <div class="vertical-body"><h3>🚢 Maritime Transport</h3><p>International freight fleet and port logistics connecting major world ports.</p><ul><li>Global freight operations</li><li>Port logistics management</li><li>Supply chain optimization</li><li>Strategic port partnerships</li></ul><span class="tag">Global Logistics</span></div>
     </div>
     <div class="vertical-card reveal">
       <img src="rail.png.png" alt="Rail" class="vertical-img" onerror="this.outerHTML='<div class=\'vertical-img-placeholder\'>🚂</div>'">
-      <div class="vertical-body">
-        <h3>🚂 Land & Rail Transport</h3>
-        <p>Modern rail and road solutions across strategic corridors in the Americas and Africa.</p>
-        <ul>
-          <li>Rail infrastructure development</li>
-          <li>Connected highway systems</li>
-          <li>Smart traffic management</li>
-          <li>Multimodal logistics hubs</li>
-        </ul>
-        <span class="tag">Infrastructure · Mobility</span>
-      </div>
+      <div class="vertical-body"><h3>🚂 Land & Rail Transport</h3><p>Modern rail and road solutions across strategic corridors in the Americas and Africa.</p><ul><li>Rail infrastructure development</li><li>Connected highway systems</li><li>Smart traffic management</li><li>Multimodal logistics hubs</li></ul><span class="tag">Infrastructure · Mobility</span></div>
     </div>
     <div class="vertical-card reveal">
       <img src="agri.jpg" alt="Agri-Food" class="vertical-img" onerror="this.outerHTML='<div class=\'vertical-img-placeholder\'>🌾</div>'">
-      <div class="vertical-body">
-        <h3>🌾 Agri-Food & Resources</h3>
-        <p>Agricultural investments and sustainable food supply chains in Africa and Latin America.</p>
-        <ul>
-          <li>Large-scale agricultural zones</li>
-          <li>Sustainable supply chains</li>
-          <li>Rural development programs</li>
-          <li>Food processing infrastructure</li>
-        </ul>
-        <span class="tag">Africa · Latin America</span>
-      </div>
+      <div class="vertical-body"><h3>🌾 Agri-Food & Resources</h3><p>Agricultural investments and sustainable food supply chains in Africa and Latin America.</p><ul><li>Large-scale agricultural zones</li><li>Sustainable supply chains</li><li>Rural development programs</li><li>Food processing infrastructure</li></ul><span class="tag">Africa · Latin America</span></div>
     </div>
   </div>
 </section>
@@ -396,24 +292,15 @@ footer nav a:hover{color:var(--gold);}
   <div class="tourism-grid">
     <div class="tourism-card reveal">
       <img src="zanzibar.avif" alt="Zanzibar" onerror="this.src='https://images.unsplash.com/photo-1504432842672-1a79f78e4084?w=700'">
-      <div class="tourism-overlay">
-        <h3>🇹🇿 Zanzibar, Tanzania</h3>
-        <p>Luxury coastal resorts, marine conservation zones & integrated tourism infrastructure</p>
-      </div>
+      <div class="tourism-overlay"><h3>🇹🇿 Zanzibar, Tanzania</h3><p>Luxury coastal resorts, marine conservation zones & integrated tourism infrastructure</p></div>
     </div>
     <div class="tourism-card reveal">
       <img src="guatemala.png" alt="Guatemala" onerror="this.src='https://images.unsplash.com/photo-1531968455001-5c5272a41129?w=700'">
-      <div class="tourism-overlay">
-        <h3>🇬🇹 Guatemala</h3>
-        <p>Cultural tourism, Mayan heritage routes & sustainable adventure travel</p>
-      </div>
+      <div class="tourism-overlay"><h3>🇬🇹 Guatemala</h3><p>Cultural tourism, Mayan heritage routes & sustainable adventure travel</p></div>
     </div>
     <div class="tourism-card reveal">
       <img src="tanzania.avif" alt="Venezuela" onerror="this.src='https://images.unsplash.com/photo-1518182170546-07661fd94144?w=700'">
-      <div class="tourism-overlay">
-        <h3>🇻🇪 Venezuela</h3>
-        <p>Eco-tourism corridors, coastal redevelopment & cultural heritage revitalization</p>
-      </div>
+      <div class="tourism-overlay"><h3>🇻🇪 Venezuela</h3><p>Eco-tourism corridors, coastal redevelopment & cultural heritage revitalization</p></div>
     </div>
   </div>
 </section>
@@ -471,52 +358,19 @@ footer nav a:hover{color:var(--gold);}
   <div class="presence-grid">
     <div class="region-card reveal">
       <div class="region-placeholder">🌏</div>
-      <div class="region-body">
-        <h3>Asia & Middle East</h3>
-        <ul class="country-list">
-          <li>Malaysia — Headquarters (KL)</li>
-          <li>Indonesia — Oil & Gas</li>
-          <li>Dubai — Energy & Finance</li>
-        </ul>
-      </div>
+      <div class="region-body"><h3>Asia & Middle East</h3><ul class="country-list"><li>Malaysia — Headquarters (KL)</li><li>Indonesia — Oil & Gas</li><li>Dubai — Energy & Finance</li></ul></div>
     </div>
     <div class="region-card reveal">
       <div class="region-placeholder">🌎</div>
-      <div class="region-body">
-        <h3>North America</h3>
-        <ul class="country-list">
-          <li>Canada — Regional Office</li>
-          <li>United States — Regional Office</li>
-        </ul>
-      </div>
+      <div class="region-body"><h3>North America</h3><ul class="country-list"><li>Canada — Regional Office</li><li>United States — Regional Office</li></ul></div>
     </div>
     <div class="region-card reveal">
       <div class="region-placeholder">🌎</div>
-      <div class="region-body">
-        <h3>Latin & Central America</h3>
-        <ul class="country-list">
-          <li>Venezuela — Oil & Gas & Tourism</li>
-          <li>Ecuador — Operations</li>
-          <li>Peru — Operations</li>
-          <li>Guatemala — Tourism</li>
-          <li>Costa Rica — Tourism</li>
-        </ul>
-      </div>
+      <div class="region-body"><h3>Latin & Central America</h3><ul class="country-list"><li>Venezuela — Oil & Gas & Tourism</li><li>Ecuador — Operations</li><li>Peru — Operations</li><li>Guatemala — Tourism</li><li>Costa Rica — Tourism</li></ul></div>
     </div>
     <div class="region-card reveal">
       <div class="region-placeholder">🌍</div>
-      <div class="region-body">
-        <h3>Africa</h3>
-        <ul class="country-list">
-          <li>Tanzania & Zanzibar — Smart City & Tourism</li>
-          <li>Gabon — Oil & Gas</li>
-          <li>Madagascar — Operations</li>
-          <li>DR Congo — Development</li>
-          <li>Central African Republic</li>
-          <li>Niger — Resources</li>
-          <li>Guinea Conakry — Resources</li>
-        </ul>
-      </div>
+      <div class="region-body"><h3>Africa</h3><ul class="country-list"><li>Tanzania & Zanzibar — Smart City & Tourism</li><li>Gabon — Oil & Gas</li><li>Madagascar — Operations</li><li>DR Congo — Development</li><li>Central African Republic</li><li>Niger — Resources</li><li>Guinea Conakry — Resources</li></ul></div>
     </div>
   </div>
 </section>
@@ -623,21 +477,11 @@ footer nav a:hover{color:var(--gold);}
 </footer>
 
 <script>
-// CUSTOM CURSOR
-const cursor = document.getElementById('cursor');
-const follower = document.getElementById('cursorFollower');
+const cursor=document.getElementById('cursor');
+const follower=document.getElementById('cursorFollower');
 let mouseX=0,mouseY=0,followerX=0,followerY=0;
-document.addEventListener('mousemove',e=>{
-  mouseX=e.clientX;mouseY=e.clientY;
-  cursor.style.left=mouseX+'px';cursor.style.top=mouseY+'px';
-});
-function animateFollower(){
-  followerX+=(mouseX-followerX)*0.12;
-  followerY+=(mouseY-followerY)*0.12;
-  follower.style.left=followerX+'px';
-  follower.style.top=followerY+'px';
-  requestAnimationFrame(animateFollower);
-}
+document.addEventListener('mousemove',e=>{mouseX=e.clientX;mouseY=e.clientY;cursor.style.left=mouseX+'px';cursor.style.top=mouseY+'px';});
+function animateFollower(){followerX+=(mouseX-followerX)*0.12;followerY+=(mouseY-followerY)*0.12;follower.style.left=followerX+'px';follower.style.top=followerY+'px';requestAnimationFrame(animateFollower);}
 animateFollower();
 document.addEventListener('mousedown',()=>{cursor.classList.add('click');follower.classList.add('click');});
 document.addEventListener('mouseup',()=>{cursor.classList.remove('click');follower.classList.remove('click');});
@@ -645,77 +489,31 @@ document.querySelectorAll('a,button,.vertical-card,.tourism-card,.value-card,.en
   el.addEventListener('mouseenter',()=>{cursor.style.transform='translate(-50%,-50%) scale(2)';follower.style.transform='translate(-50%,-50%) scale(1.5)';});
   el.addEventListener('mouseleave',()=>{cursor.style.transform='translate(-50%,-50%) scale(1)';follower.style.transform='translate(-50%,-50%) scale(1)';});
 });
-
-// SCROLL PROGRESS
 const progress=document.getElementById('scrollProgress');
 window.addEventListener('scroll',()=>{
   const scrollTop=window.scrollY;
   const docHeight=document.documentElement.scrollHeight-window.innerHeight;
   progress.style.width=(scrollTop/docHeight*100)+'%';
-  // NAV SHRINK
   document.getElementById('navbar').classList.toggle('scrolled',scrollTop>80);
 });
-
-// SCROLL REVEAL
 const reveals=document.querySelectorAll('.reveal,.reveal-left,.reveal-right');
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});
-},{threshold:0.15});
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.15});
 reveals.forEach(r=>observer.observe(r));
-
-// COUNTER ANIMATION
 function animateCount(el,target){
-  let count=0;
-  const step=target/60;
-  const interval=setInterval(()=>{
-    count+=step;
-    if(count>=target){count=target;clearInterval(interval);}
-    el.textContent=Math.floor(count)+(target===150?'B':target===20?'+':'');
-  },20);
+  let count=0;const step=target/60;
+  const interval=setInterval(()=>{count+=step;if(count>=target){count=target;clearInterval(interval);}
+  el.textContent=Math.floor(count)+(target===150?'B':target===20?'+':'');},20);
 }
-const counterObserver=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      document.querySelectorAll('.stat-num[data-count]').forEach(el=>{
-        animateCount(el,parseInt(el.dataset.count));
-      });
-      counterObserver.disconnect();
-    }
-  });
-},{threshold:0.5});
+const counterObserver=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('.stat-num[data-count]').forEach(el=>{animateCount(el,parseInt(el.dataset.count));});counterObserver.disconnect();}});},{threshold:0.5});
 const statsBar=document.querySelector('.stats-bar');
 if(statsBar)counterObserver.observe(statsBar);
-
-// PARTICLE CANVAS
 const canvas=document.getElementById('particleCanvas');
 if(canvas){
   const ctx=canvas.getContext('2d');
-  canvas.width=window.innerWidth;
-  canvas.height=window.innerHeight;
+  canvas.width=window.innerWidth;canvas.height=window.innerHeight;
   const particles=[];
-  for(let i=0;i<60;i++){
-    particles.push({
-      x:Math.random()*canvas.width,
-      y:Math.random()*canvas.height,
-      r:Math.random()*2+0.5,
-      dx:(Math.random()-0.5)*0.4,
-      dy:(Math.random()-0.5)*0.4,
-      o:Math.random()*0.4+0.1
-    });
-  }
-  function drawParticles(){
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    particles.forEach(p=>{
-      ctx.beginPath();
-      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-      ctx.fillStyle=`rgba(201,168,76,${p.o})`;
-      ctx.fill();
-      p.x+=p.dx;p.y+=p.dy;
-      if(p.x<0||p.x>canvas.width)p.dx*=-1;
-      if(p.y<0||p.y>canvas.height)p.dy*=-1;
-    });
-    requestAnimationFrame(drawParticles);
-  }
+  for(let i=0;i<60;i++){particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*2+0.5,dx:(Math.random()-0.5)*0.4,dy:(Math.random()-0.5)*0.4,o:Math.random()*0.4+0.1});}
+  function drawParticles(){ctx.clearRect(0,0,canvas.width,canvas.height);particles.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(201,168,76,${p.o})`;ctx.fill();p.x+=p.dx;p.y+=p.dy;if(p.x<0||p.x>canvas.width)p.dx*=-1;if(p.y<0||p.y>canvas.height)p.dy*=-1;});requestAnimationFrame(drawParticles);}
   drawParticles();
   window.addEventListener('resize',()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight;});
 }
