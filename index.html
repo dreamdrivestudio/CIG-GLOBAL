@@ -535,6 +535,61 @@ if(canvas){
   for(let i=0;i<60;i++){particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*2+0.5,dx:(Math.random()-0.5)*0.4,dy:(Math.random()-0.5)*0.4,o:Math.random()*0.4+0.1});}
   function drawParticles(){ctx.clearRect(0,0,canvas.width,canvas.height);particles.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(201,168,76,${p.o})`;ctx.fill();p.x+=p.dx;p.y+=p.dy;if(p.x<0||p.x>canvas.width)p.dx*=-1;if(p.y<0||p.y>canvas.height)p.dy*=-1;});requestAnimationFrame(drawParticles);}
   drawParticles();
+  // LIVE TICKER
+async function loadTicker(){
+  try{
+    const items=[];
+
+    // CRYPTO via CoinGecko (free, no key)
+    const cryptoRes=await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,tron,binancecoin,ripple&vs_currencies=usd&include_24hr_change=true');
+    const crypto=await cryptoRes.json();
+    const cryptoMap={bitcoin:'BTC',ethereum:'ETH',tron:'TRX',binancecoin:'BNB',ripple:'XRP'};
+    for(const[id,symbol] of Object.entries(cryptoMap)){
+      if(crypto[id]){
+        const price=crypto[id].usd;
+        const change=crypto[id].usd_24h_change?.toFixed(2);
+        const up=change>=0;
+        items.push({name:symbol,value:'$'+price.toLocaleString('en-US',{maximumFractionDigits:4}),change:(up?'▲':'▼')+Math.abs(change)+'%',up});
+      }
+    }
+
+    // CURRENCIES via exchangerate-api (free)
+    const fxRes=await fetch('https://open.er-api.com/v6/latest/USD');
+    const fx=await fxRes.json();
+    const pairs=[
+      {from:'USD',to:'EUR',label:'EUR/USD'},
+      {from:'USD',to:'CNY',label:'USD/CNY'},
+      {from:'USD',to:'CAD',label:'USD/CAD'},
+      {from:'USD',to:'MYR',label:'USD/MYR'},
+      {from:'USD',to:'GBP',label:'GBP/USD'},
+      {from:'USD',to:'JPY',label:'USD/JPY'},
+      {from:'USD',to:'XOF',label:'USD/CFA'},
+    ];
+    for(const pair of pairs){
+      const rate=fx.rates[pair.to];
+      if(rate) items.push({name:pair.label,value:rate.toFixed(4),change:'',up:true,isFx:true});
+    }
+
+    // Duplicate for infinite scroll
+    const inner=document.getElementById('tickerInner');
+    if(!inner)return;
+    let html='';
+    const allItems=[...items,...items];
+    for(const item of allItems){
+      html+=`<div class="ticker-item">
+        <span class="ticker-name">${item.name}</span>
+        <span class="ticker-value">${item.value}</span>
+        ${item.change?`<span class="ticker-change ${item.up?'up':'down'}">${item.change}</span>`:''}
+      </div>`;
+    }
+    inner.innerHTML=html;
+  }catch(e){
+    const inner=document.getElementById('tickerInner');
+    if(inner) inner.innerHTML='<span class="ticker-loading">Market data temporarily unavailable</span>';
+  }
+}
+loadTicker();
+setInterval(loadTicker,60000); // refresh every minute
   window.addEventListener('resize',()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight;});
 }
 </script>
