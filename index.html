@@ -51,6 +51,19 @@ nav.scrolled{padding:10px 48px;background:rgba(10,14,26,0.99);}
 .stat:last-child{border-right:none;}
 .stat-num{font-size:2.4em;font-weight:900;color:var(--gold);}
 .stat-label{font-size:0.78em;color:#a0b0c8;text-transform:uppercase;letter-spacing:0.07em;margin-top:5px;}
+/* TICKER */
+.ticker-wrapper{background:linear-gradient(90deg,#03060e,#0a0e1a,#03060e);border-top:1px solid rgba(201,168,76,0.3);border-bottom:1px solid rgba(201,168,76,0.3);display:flex;align-items:center;overflow:hidden;height:44px;position:relative;}
+.ticker-label{background:linear-gradient(135deg,var(--gold),#e8c060);color:#000;font-size:0.7em;font-weight:800;letter-spacing:0.1em;padding:0 18px;height:100%;display:flex;align-items:center;white-space:nowrap;flex-shrink:0;z-index:2;}
+.ticker-track{flex:1;overflow:hidden;position:relative;}
+.ticker-inner{display:flex;animation:ticker 50s linear infinite;white-space:nowrap;}
+.ticker-inner:hover{animation-play-state:paused;}
+.ticker-item{display:inline-flex;align-items:center;gap:8px;padding:0 24px;border-right:1px solid rgba(255,255,255,0.06);height:44px;font-size:0.8em;}
+.ticker-name{color:#8090a8;font-weight:600;letter-spacing:0.04em;}
+.ticker-value{color:#e0e8f0;font-weight:700;}
+.ticker-change.up{color:#22c55e;}
+.ticker-change.down{color:#ef4444;}
+@keyframes ticker{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+/* REVEAL */
 .reveal{opacity:0;transform:translateY(40px);transition:opacity 0.8s ease,transform 0.8s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 .reveal-left{opacity:0;transform:translateX(-40px);transition:opacity 0.8s ease,transform 0.8s ease;}
@@ -219,13 +232,23 @@ footer nav a:hover{color:var(--gold);}
       <a href="#contact" class="btn-outline">Partner With Us</a>
     </div>
     <div class="stats-bar">
-      <div class="stat"><div class="stat-num">—</div><div class="stat-label">Active Projects Across 4 Continents</div></div>
+      <div class="stat"><div class="stat-num">150B+</div><div class="stat-label">Active Projects Across 4 Continents</div></div>
       <div class="stat"><div class="stat-num">4</div><div class="stat-label">Continents</div></div>
       <div class="stat"><div class="stat-num">20+</div><div class="stat-label">Countries</div></div>
       <div class="stat"><div class="stat-num">6</div><div class="stat-label">Key Sectors</div></div>
     </div>
   </div>
 </section>
+
+<!-- TICKER -->
+<div class="ticker-wrapper">
+  <div class="ticker-label">GLOBAL OUTLOOK</div>
+  <div class="ticker-track">
+    <div class="ticker-inner" id="tickerInner">
+      <span style="color:#6080a0;padding:0 24px;line-height:44px;font-size:0.82em;">Active markets: Southeast Asia · Latin America · Africa · Middle East · Loading live data...</span>
+    </div>
+  </div>
+</div>
 
 <div class="gold-line"></div>
 
@@ -477,6 +500,7 @@ footer nav a:hover{color:var(--gold);}
 </footer>
 
 <script>
+// CURSOR
 const cursor=document.getElementById('cursor');
 const follower=document.getElementById('cursorFollower');
 let mouseX=0,mouseY=0,followerX=0,followerY=0;
@@ -489,6 +513,8 @@ document.querySelectorAll('a,button,.vertical-card,.tourism-card,.value-card,.en
   el.addEventListener('mouseenter',()=>{cursor.style.transform='translate(-50%,-50%) scale(2)';follower.style.transform='translate(-50%,-50%) scale(1.5)';});
   el.addEventListener('mouseleave',()=>{cursor.style.transform='translate(-50%,-50%) scale(1)';follower.style.transform='translate(-50%,-50%) scale(1)';});
 });
+
+// SCROLL PROGRESS
 const progress=document.getElementById('scrollProgress');
 window.addEventListener('scroll',()=>{
   const scrollTop=window.scrollY;
@@ -496,9 +522,13 @@ window.addEventListener('scroll',()=>{
   progress.style.width=(scrollTop/docHeight*100)+'%';
   document.getElementById('navbar').classList.toggle('scrolled',scrollTop>80);
 });
+
+// SCROLL REVEAL
 const reveals=document.querySelectorAll('.reveal,.reveal-left,.reveal-right');
 const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});},{threshold:0.15});
 reveals.forEach(r=>observer.observe(r));
+
+// PARTICLES
 const canvas=document.getElementById('particleCanvas');
 if(canvas){
   const ctx=canvas.getContext('2d');
@@ -509,6 +539,50 @@ if(canvas){
   drawParticles();
   window.addEventListener('resize',()=>{canvas.width=window.innerWidth;canvas.height=window.innerHeight;});
 }
+
+// LIVE TICKER
+async function loadTicker(){
+  try{
+    const items=[];
+    // CRYPTO
+    const cryptoRes=await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,tron,binancecoin,ripple,solana&vs_currencies=usd&include_24hr_change=true');
+    const crypto=await cryptoRes.json();
+    const cryptoMap={bitcoin:'BTC',ethereum:'ETH',tron:'TRX',binancecoin:'BNB',ripple:'XRP',solana:'SOL'};
+    for(const[id,symbol] of Object.entries(cryptoMap)){
+      if(crypto[id]){
+        const price=crypto[id].usd;
+        const change=crypto[id].usd_24h_change?.toFixed(2);
+        const up=parseFloat(change)>=0;
+        items.push({name:symbol,value:'$'+price.toLocaleString('en-US',{maximumFractionDigits:2}),change:(up?'▲':'▼')+Math.abs(change)+'%',up});
+      }
+    }
+    // CURRENCIES
+    const fxRes=await fetch('https://open.er-api.com/v6/latest/USD');
+    const fx=await fxRes.json();
+    const pairs=[
+      {to:'EUR',label:'EUR/USD'},{to:'CNY',label:'USD/CNY'},{to:'CAD',label:'USD/CAD'},
+      {to:'MYR',label:'USD/MYR'},{to:'GBP',label:'GBP/USD'},{to:'JPY',label:'USD/JPY'},
+      {to:'XOF',label:'USD/CFA'},{to:'AED',label:'USD/AED'}
+    ];
+    for(const pair of pairs){
+      const rate=fx.rates[pair.to];
+      if(rate)items.push({name:pair.label,value:rate.toFixed(4),change:'',up:true});
+    }
+    const inner=document.getElementById('tickerInner');
+    if(!inner||!items.length)return;
+    let html='';
+    const all=[...items,...items];
+    for(const item of all){
+      html+=`<div class="ticker-item"><span class="ticker-name">${item.name}</span><span class="ticker-value">${item.value}</span>${item.change?`<span class="ticker-change ${item.up?'up':'down'}">${item.change}</span>`:''}</div>`;
+    }
+    inner.innerHTML=html;
+  }catch(e){
+    const inner=document.getElementById('tickerInner');
+    if(inner)inner.innerHTML='<span style="color:#6080a0;padding:0 24px;line-height:44px;font-size:0.82em;">Active markets: Southeast Asia · Latin America · Africa · Middle East</span>';
+  }
+}
+loadTicker();
+setInterval(loadTicker,60000);
 </script>
 </body>
 </html>
