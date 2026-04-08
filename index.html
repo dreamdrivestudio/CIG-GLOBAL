@@ -9,24 +9,23 @@
 :root{--gold:#c9a84c;--dark:#0a0e1a;--navy:#0d1b3e;}
 body{font-family:'Segoe UI',sans-serif;color:#fff;background:var(--dark);cursor:none;}
 html{scroll-behavior:smooth;}
-.cursor{position:fixed;width:12px;height:12px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:transform 0.1s,background 0.2s;mix-blend-mode:difference;}
+.cursor{position:fixed;width:12px;height:12px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:transform 0.1s;mix-blend-mode:difference;}
 .cursor-follower{position:fixed;width:36px;height:36px;border:1.5px solid var(--gold);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:all 0.12s ease;opacity:0.6;}
 .cursor.click{transform:translate(-50%,-50%) scale(2);}
 .cursor-follower.click{transform:translate(-50%,-50%) scale(0.5);}
-.scroll-progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold),#f5e070);z-index:9999;width:0%;transition:width 0.1s;}
-nav{position:fixed;top:0;width:100%;background:rgba(10,14,26,0.97);backdrop-filter:blur(16px);padding:12px 32px;display:flex;justify-content:space-between;align-items:center;z-index:1000;border-bottom:1px solid rgba(201,168,76,0.15);transition:all 0.3s;}
-nav.scrolled{padding:10px 32px;background:rgba(10,14,26,0.99);}
-.logo{display:flex;align-items:center;gap:10px;flex-shrink:0;}
-.logo img{height:52px;border-radius:6px;transition:transform 0.3s;}
-.logo img:hover{transform:scale(1.05);}
-.logo-text{font-size:0.82em;font-weight:700;color:#fff;letter-spacing:0.03em;line-height:1.3;white-space:nowrap;}
+.scroll-progress{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--gold),#f5e070);z-index:9999;width:0%;}
+nav{position:fixed;top:0;width:100%;background:rgba(10,14,26,0.97);backdrop-filter:blur(16px);padding:12px 24px;display:flex;justify-content:space-between;align-items:center;z-index:1000;border-bottom:1px solid rgba(201,168,76,0.15);transition:all 0.3s;}
+nav.scrolled{padding:8px 24px;}
+.logo{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+.logo img{height:48px;border-radius:6px;}
+.logo-text{font-size:0.78em;font-weight:700;color:#fff;line-height:1.3;white-space:nowrap;}
 .logo-text span{color:var(--gold);}
-.nav-links{display:flex;gap:16px;list-style:none;align-items:center;flex-wrap:nowrap;}
-.nav-links a{text-decoration:none;color:#aaa;font-size:0.72em;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;transition:color 0.2s;position:relative;white-space:nowrap;}
-.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.3s;}
+.nav-links{display:flex;gap:12px;list-style:none;align-items:center;flex-wrap:nowrap;}
+.nav-links a{text-decoration:none;color:#aaa;font-size:0.65em;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;transition:color 0.2s;position:relative;white-space:nowrap;}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.3s;}
 .nav-links a:hover{color:var(--gold);}
 .nav-links a:hover::after{width:100%;}
-.nav-cta{padding:8px 18px;background:linear-gradient(135deg,var(--gold),#e8c060);color:#000!important;font-weight:700;border-radius:5px;text-decoration:none;font-size:0.72em;transition:transform 0.2s,box-shadow 0.2s;white-space:nowrap;}
+.nav-cta{padding:7px 14px;background:linear-gradient(135deg,var(--gold),#e8c060);color:#000!important;font-weight:700;border-radius:5px;text-decoration:none;font-size:0.65em;white-space:nowrap;}
 .nav-cta:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(201,168,76,0.35);}
 .nav-cta::after{display:none!important;}
 .hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding:140px 40px 80px;overflow:hidden;}
@@ -44,20 +43,20 @@ nav.scrolled{padding:10px 32px;background:rgba(10,14,26,0.99);}
 .btn-primary::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);transition:left 0.5s;}
 .btn-primary:hover::before{left:100%;}
 .btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(201,168,76,0.45);}
-.btn-outline{padding:14px 36px;border:1px solid rgba(201,168,76,0.5);color:var(--gold);font-weight:600;border-radius:6px;text-decoration:none;font-size:0.95em;transition:all 0.3s;backdrop-filter:blur(8px);}
+.btn-outline{padding:14px 36px;border:1px solid rgba(201,168,76,0.5);color:var(--gold);font-weight:600;border-radius:6px;text-decoration:none;font-size:0.95em;transition:all 0.3s;}
 .btn-outline:hover{background:rgba(201,168,76,0.1);border-color:var(--gold);transform:translateY(-3px);}
 .stats-bar{display:flex;justify-content:center;flex-wrap:wrap;margin-top:70px;border-top:1px solid rgba(255,255,255,0.08);padding-top:44px;animation:fadeInUp 1s 1s ease both;}
 .stat{flex:1;min-width:150px;text-align:center;padding:0 24px;border-right:1px solid rgba(255,255,255,0.08);}
 .stat:last-child{border-right:none;}
 .stat-num{font-size:2.4em;font-weight:900;color:var(--gold);}
 .stat-label{font-size:0.78em;color:#a0b0c8;text-transform:uppercase;letter-spacing:0.07em;margin-top:5px;}
-.ticker-wrapper{background:linear-gradient(90deg,#03060e,#0a0e1a,#03060e);border-top:1px solid rgba(201,168,76,0.3);border-bottom:1px solid rgba(201,168,76,0.3);display:flex;align-items:center;overflow:hidden;height:44px;position:relative;}
-.ticker-label{background:linear-gradient(135deg,var(--gold),#e8c060);color:#000;font-size:0.7em;font-weight:800;letter-spacing:0.1em;padding:0 18px;height:100%;display:flex;align-items:center;white-space:nowrap;flex-shrink:0;z-index:2;}
-.ticker-track{flex:1;overflow:hidden;position:relative;}
+.ticker-wrapper{background:linear-gradient(90deg,#03060e,#0a0e1a,#03060e);border-top:1px solid rgba(201,168,76,0.3);border-bottom:1px solid rgba(201,168,76,0.3);display:flex;align-items:center;overflow:hidden;height:44px;}
+.ticker-label{background:linear-gradient(135deg,var(--gold),#e8c060);color:#000;font-size:0.7em;font-weight:800;letter-spacing:0.1em;padding:0 18px;height:100%;display:flex;align-items:center;white-space:nowrap;flex-shrink:0;}
+.ticker-track{flex:1;overflow:hidden;}
 .ticker-inner{display:flex;animation:ticker 50s linear infinite;white-space:nowrap;}
 .ticker-inner:hover{animation-play-state:paused;}
 .ticker-item{display:inline-flex;align-items:center;gap:8px;padding:0 24px;border-right:1px solid rgba(255,255,255,0.06);height:44px;font-size:0.8em;}
-.ticker-name{color:#8090a8;font-weight:600;letter-spacing:0.04em;}
+.ticker-name{color:#8090a8;font-weight:600;}
 .ticker-value{color:#e0e8f0;font-weight:700;}
 .ticker-change.up{color:#22c55e;}
 .ticker-change.down{color:#ef4444;}
@@ -78,15 +77,21 @@ h2.section-title .accent{background:linear-gradient(90deg,var(--gold),#f5e070);-
 .vision-inner{display:flex;gap:64px;align-items:center;flex-wrap:wrap;margin-top:48px;}
 .vision-text{flex:1;min-width:300px;}
 .vision-text p{color:#7090b0;line-height:1.8;margin-bottom:16px;font-size:0.95em;}
-.vision-img{flex:1;min-width:300px;border-radius:18px;overflow:hidden;border:1px solid rgba(201,168,76,0.15);position:relative;}
+.vision-img{flex:1;min-width:300px;border-radius:18px;overflow:hidden;border:1px solid rgba(201,168,76,0.15);}
 .vision-img img{width:100%;height:380px;object-fit:cover;display:block;transition:transform 0.6s ease;}
 .vision-img:hover img{transform:scale(1.05);}
-.vision-img::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,0.1),transparent);pointer-events:none;}
+/* CLICKABLE IMAGE WRAPPER */
+.clickable-img{display:block;overflow:hidden;position:relative;cursor:pointer;}
+.clickable-img img{transition:transform 0.5s ease;display:block;width:100%;}
+.clickable-img:hover img{transform:scale(1.06);}
+.clickable-img .explore-label{position:absolute;bottom:-44px;left:0;right:0;padding:12px;background:linear-gradient(transparent,rgba(201,168,76,0.92));color:#000;font-weight:700;font-size:0.78em;text-align:center;letter-spacing:0.1em;transition:bottom 0.3s ease;display:flex;align-items:center;justify-content:center;gap:6px;}
+.clickable-img:hover .explore-label{bottom:0;}
+/* VERTICALS */
 .verticals{background:var(--dark);}
 .verticals-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;margin-top:52px;}
 .vertical-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:18px;overflow:hidden;transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);position:relative;}
 .vertical-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,0.05),transparent);opacity:0;transition:opacity 0.3s;z-index:1;pointer-events:none;}
-.vertical-card:hover{border-color:rgba(201,168,76,0.4);transform:translateY(-8px);box-shadow:0 24px 56px rgba(0,0,0,0.4),0 0 0 1px rgba(201,168,76,0.1);}
+.vertical-card:hover{border-color:rgba(201,168,76,0.4);transform:translateY(-8px);box-shadow:0 24px 56px rgba(0,0,0,0.4);}
 .vertical-card:hover::before{opacity:1;}
 .vertical-img{width:100%;height:200px;object-fit:cover;display:block;transition:transform 0.6s ease;}
 .vertical-card:hover .vertical-img{transform:scale(1.05);}
@@ -98,27 +103,25 @@ h2.section-title .accent{background:linear-gradient(90deg,var(--gold),#f5e070);-
 .vertical-body ul li{font-size:0.84em;color:#7090a8;padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.04);display:flex;align-items:flex-start;gap:8px;}
 .vertical-body ul li::before{content:'›';color:var(--gold);font-weight:700;flex-shrink:0;}
 .tag{display:inline-block;padding:4px 14px;background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.25);border-radius:20px;font-size:0.74em;color:var(--gold);}
-.tourism{background:#060a14;}
-.tourism-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:52px;}
-.tourism-card{border-radius:18px;overflow:hidden;position:relative;cursor:pointer;}
-.tourism-card img{width:100%;height:280px;object-fit:cover;display:block;transition:transform 0.6s ease;}
-.tourism-card:hover img{transform:scale(1.1);}
-.tourism-overlay{position:absolute;bottom:0;left:0;right:0;padding:28px;background:linear-gradient(transparent,rgba(0,0,0,0.92));transform:translateY(10px);transition:transform 0.3s ease;}
-.tourism-card:hover .tourism-overlay{transform:translateY(0);}
-.tourism-overlay h3{font-size:1.25em;font-weight:700;margin-bottom:6px;}
-.tourism-overlay p{font-size:0.85em;color:#b0bcc8;line-height:1.6;}
-.energy{background:var(--dark);}
-.energy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:52px;}
-.energy-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:28px;transition:all 0.3s;position:relative;overflow:hidden;}
-.energy-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),#f5e070);transform:scaleX(0);transition:transform 0.3s ease;}
-.energy-card:hover{border-color:rgba(201,168,76,0.3);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.3);}
-.energy-card:hover::after{transform:scaleX(1);}
-.energy-icon{font-size:2.2em;margin-bottom:14px;}
-.energy-card h3{font-size:1.05em;font-weight:700;margin-bottom:10px;color:#e0e8f0;}
-.energy-card p{font-size:0.86em;color:#6080a0;line-height:1.7;}
-.smartcity{background:#060a14;}
+/* SECTOR SECTIONS */
+.sector-section{padding:80px 64px;}
+.sector-section.dark{background:#060a14;}
+.sector-section.darker{background:var(--dark);}
+.subsection-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:48px;}
+.subsection-card{border-radius:18px;overflow:hidden;position:relative;cursor:pointer;}
+.subsection-card img{width:100%;height:280px;object-fit:cover;display:block;transition:transform 0.6s ease;}
+.subsection-card:hover img{transform:scale(1.06);}
+.subsection-overlay{position:absolute;bottom:0;left:0;right:0;padding:24px 28px 28px;background:linear-gradient(transparent,rgba(5,8,20,0.97));transition:all 0.3s ease;}
+.subsection-card:hover .subsection-overlay{padding-bottom:36px;}
+.subsection-overlay h3{font-size:1.1em;font-weight:800;margin-bottom:8px;color:#ffffff;text-shadow:0 2px 8px rgba(0,0,0,0.8);}
+.subsection-overlay p{font-size:0.83em;color:#d0d8e8;line-height:1.65;margin-bottom:12px;text-shadow:0 1px 4px rgba(0,0,0,0.6);}
+.explore-tag{display:inline-flex;align-items:center;gap:6px;font-size:0.74em;color:var(--gold);font-weight:700;letter-spacing:0.1em;text-transform:uppercase;opacity:0;transform:translateY(8px);transition:all 0.3s ease;border:1px solid rgba(201,168,76,0.4);padding:4px 12px;border-radius:20px;background:rgba(201,168,76,0.1);}
+.subsection-card:hover .explore-tag{opacity:1;transform:translateY(0);}
+.explore-arrow{transition:transform 0.3s ease;}
+.subsection-card:hover .explore-arrow{transform:translateX(4px);}
+/* SMART CITY */
 .smartcity-inner{display:flex;gap:64px;align-items:center;flex-wrap:wrap;margin-top:52px;}
-.smartcity-img{flex:1;min-width:300px;border-radius:18px;overflow:hidden;border:1px solid rgba(201,168,76,0.15);position:relative;}
+.smartcity-img{flex:1;min-width:300px;border-radius:18px;overflow:hidden;border:1px solid rgba(201,168,76,0.15);}
 .smartcity-img img{width:100%;height:380px;object-fit:cover;display:block;transition:transform 0.6s ease;}
 .smartcity-img:hover img{transform:scale(1.05);}
 .smartcity-text{flex:1;min-width:300px;}
@@ -128,10 +131,19 @@ h2.section-title .accent{background:linear-gradient(90deg,var(--gold),#f5e070);-
 .pillars li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:0.88em;color:#8090a8;display:flex;align-items:center;gap:10px;transition:color 0.2s,padding-left 0.2s;}
 .pillars li:hover{color:#c0d0e0;padding-left:8px;}
 .pillars li::before{content:'◆';color:var(--gold);font-size:0.6em;flex-shrink:0;}
-.presence{background:var(--dark);}
+/* ENERGY */
+.energy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:52px;}
+.energy-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:28px;transition:all 0.3s;position:relative;overflow:hidden;}
+.energy-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),#f5e070);transform:scaleX(0);transition:transform 0.3s ease;}
+.energy-card:hover{border-color:rgba(201,168,76,0.3);transform:translateY(-4px);}
+.energy-card:hover::after{transform:scaleX(1);}
+.energy-icon{font-size:2.2em;margin-bottom:14px;}
+.energy-card h3{font-size:1.05em;font-weight:700;margin-bottom:10px;color:#e0e8f0;}
+.energy-card p{font-size:0.86em;color:#6080a0;line-height:1.7;}
+/* PRESENCE */
 .presence-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:22px;margin-top:52px;}
 .region-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;overflow:hidden;transition:all 0.3s;}
-.region-card:hover{border-color:rgba(201,168,76,0.3);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.3);}
+.region-card:hover{border-color:rgba(201,168,76,0.3);transform:translateY(-4px);}
 .region-placeholder{width:100%;height:150px;display:flex;align-items:center;justify-content:center;font-size:3em;background:rgba(255,255,255,0.02);}
 .region-body{padding:22px;}
 .region-body h3{font-size:0.95em;font-weight:700;color:var(--gold);margin-bottom:14px;text-transform:uppercase;letter-spacing:0.06em;}
@@ -140,30 +152,30 @@ h2.section-title .accent{background:linear-gradient(90deg,var(--gold),#f5e070);-
 .country-list li:hover{color:#c0d0e0;padding-left:6px;}
 .country-list li:last-child{border-bottom:none;}
 .country-list li::before{content:'›';color:var(--gold);font-weight:700;}
-.leadership{background:#060a14;}
+/* LEADERSHIP */
 .leadership-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;margin-top:52px;}
-.leader-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:28px;transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);position:relative;overflow:hidden;text-align:left;}
+.leader-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:28px;transition:all 0.4s;position:relative;overflow:hidden;text-align:left;}
 .leader-card::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(201,168,76,0.05) 0%,transparent 70%);opacity:0;transition:opacity 0.4s;}
-.leader-card:hover{border-color:rgba(201,168,76,0.35);transform:translateY(-6px);box-shadow:0 20px 48px rgba(0,0,0,0.35);}
+.leader-card:hover{border-color:rgba(201,168,76,0.35);transform:translateY(-6px);}
 .leader-card:hover::before{opacity:1;}
-.leader-avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#e8c060);display:flex;align-items:center;justify-content:center;font-size:1.5em;font-weight:900;color:#000;margin-bottom:20px;flex-shrink:0;}
+.leader-avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#e8c060);display:flex;align-items:center;justify-content:center;font-size:1.5em;font-weight:900;color:#000;margin-bottom:20px;}
 .leader-role{font-size:0.7em;color:var(--gold);text-transform:uppercase;letter-spacing:0.12em;font-weight:700;margin-bottom:8px;line-height:1.4;}
 .leader-name{font-size:1.25em;font-weight:800;margin-bottom:12px;color:#e0e8f0;}
 .leader-desc{font-size:0.87em;color:#6080a0;line-height:1.7;}
 .leader-location{margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.05);font-size:0.78em;color:#556070;}
-.value{background:var(--dark);}
+/* VALUE */
 .value-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:52px;}
-.value-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:28px;text-align:center;transition:all 0.4s cubic-bezier(0.175,0.885,0.32,1.275);position:relative;overflow:hidden;}
+.value-card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:14px;padding:28px;text-align:center;transition:all 0.4s;position:relative;overflow:hidden;}
 .value-card::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(201,168,76,0.05) 0%,transparent 70%);opacity:0;transition:opacity 0.4s;}
-.value-card:hover{border-color:rgba(201,168,76,0.35);transform:translateY(-6px);box-shadow:0 20px 48px rgba(0,0,0,0.35);}
+.value-card:hover{border-color:rgba(201,168,76,0.35);transform:translateY(-6px);}
 .value-card:hover::before{opacity:1;}
 .value-icon{font-size:2.4em;margin-bottom:14px;transition:transform 0.3s;}
 .value-card:hover .value-icon{transform:scale(1.2) rotate(5deg);}
 .value-card h3{font-size:1em;font-weight:700;margin-bottom:10px;color:#e0e8f0;}
 .value-card p{font-size:0.84em;color:#6080a0;line-height:1.7;}
-.hq{background:#060a14;}
+/* HQ */
 .hq-inner{display:flex;gap:64px;align-items:center;flex-wrap:wrap;margin-top:52px;}
-.hq-img{flex:1;min-width:300px;border-radius:18px;overflow:hidden;border:1px solid rgba(201,168,76,0.2);position:relative;}
+.hq-img{flex:1;min-width:300px;border-radius:18px;overflow:hidden;border:1px solid rgba(201,168,76,0.2);}
 .hq-img img{width:100%;height:420px;object-fit:cover;display:block;transition:transform 0.6s ease;}
 .hq-img:hover img{transform:scale(1.04);}
 .hq-text{flex:1;min-width:300px;}
@@ -173,7 +185,7 @@ h2.section-title .accent{background:linear-gradient(90deg,var(--gold),#f5e070);-
 .hq-info-item{display:flex;align-items:flex-start;gap:12px;font-size:0.88em;color:#8090a8;padding:10px 14px;border-radius:8px;transition:background 0.2s;}
 .hq-info-item:hover{background:rgba(255,255,255,0.03);}
 .hq-info-item strong{color:#c0d0e0;}
-.contact{background:linear-gradient(135deg,#060a14,var(--navy));}
+/* CONTACT */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;margin-top:52px;}
 .contact-info h3{font-size:1.1em;font-weight:700;margin-bottom:24px;color:#e0e0f0;}
 .contact-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:20px;padding:12px;border-radius:8px;transition:background 0.2s;}
@@ -181,8 +193,8 @@ h2.section-title .accent{background:linear-gradient(90deg,var(--gold),#f5e070);-
 .contact-icon{font-size:1.3em;margin-top:2px;}
 .contact-item p{color:#6080a0;font-size:0.9em;line-height:1.8;}
 .contact-item strong{color:#c0d0e0;}
-.form input,.form select,.form textarea{width:100%;padding:13px 16px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:#fff;font-size:0.9em;margin-bottom:14px;outline:none;transition:border-color 0.2s,background 0.2s,transform 0.2s;font-family:'Segoe UI',sans-serif;}
-.form input:focus,.form select:focus,.form textarea:focus{border-color:var(--gold);background:rgba(255,255,255,0.07);transform:translateY(-1px);}
+.form input,.form select,.form textarea{width:100%;padding:13px 16px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:#fff;font-size:0.9em;margin-bottom:14px;outline:none;transition:border-color 0.2s,transform 0.2s;font-family:'Segoe UI',sans-serif;}
+.form input:focus,.form select:focus,.form textarea:focus{border-color:var(--gold);transform:translateY(-1px);}
 .form select option{background:#0d1b3e;}
 .form textarea{min-height:110px;resize:vertical;}
 .submit-btn{width:100%;padding:15px;background:linear-gradient(135deg,var(--gold),#e8c060);color:#0a0e1a;font-weight:800;font-size:1em;border:none;border-radius:8px;cursor:none;transition:all 0.3s;position:relative;overflow:hidden;}
@@ -211,15 +223,19 @@ footer nav a:hover{color:var(--gold);}
 
 <nav id="navbar">
   <div class="logo">
-    <img src="logo.png" alt="CIG Logo" onerror="this.style.display='none'">
+    <img src="logo.png" alt="CIG" onerror="this.style.display='none'">
     <div class="logo-text"><span>Coordinate</span> International Global</div>
   </div>
   <ul class="nav-links">
     <li><a href="#vision">Vision</a></li>
     <li><a href="#verticals">Sectors</a></li>
     <li><a href="#tourism">Tourism</a></li>
-    <li><a href="#energy">Energy</a></li>
     <li><a href="#smartcity">Smart Cities</a></li>
+    <li><a href="#energy">Energy</a></li>
+    <li><a href="#maritime">Maritime</a></li>
+    <li><a href="#landrail">Land & Rail</a></li>
+    <li><a href="#agriculture">Agriculture</a></li>
+    <li><a href="#automotive">Automotive</a></li>
     <li><a href="#presence">Global Presence</a></li>
     <li><a href="#leadership">Leadership</a></li>
     <li><a href="#contact" class="nav-cta">Contact Us</a></li>
@@ -227,9 +243,7 @@ footer nav a:hover{color:var(--gold);}
 </nav>
 
 <section class="hero">
-  <video class="hero-video" autoplay muted loop playsinline>
-    <source src="video.mp4" type="video/mp4">
-  </video>
+  <video class="hero-video" autoplay muted loop playsinline><source src="video.mp4" type="video/mp4"></video>
   <div class="hero-overlay"></div>
   <canvas class="hero-particles" id="particleCanvas"></canvas>
   <div class="hero-content">
@@ -261,6 +275,7 @@ footer nav a:hover{color:var(--gold);}
 
 <div class="gold-line"></div>
 
+<!-- VISION -->
 <section class="vision" id="vision">
   <div class="section-tag reveal">Strategic Vision</div>
   <h2 class="section-title reveal">Driving the Next Era of<br><span class="accent">Global Development</span></h2>
@@ -270,97 +285,102 @@ footer nav a:hover{color:var(--gold);}
       <p>CIG accelerates transformative projects worldwide, shaping the future of smart cities, clean energy, and resilient infrastructure.</p>
       <p>Powered by market intelligence and a worldwide network of partners, we deliver sustainable impact — from South America's energy corridors to East Africa's rising smart city ecosystems.</p>
       <p>Our integrated approach combines deep sector expertise, government alignment, and blended finance models to unlock high-growth opportunities across emerging markets.</p>
-      <br>
-      <a href="#verticals" class="btn-primary">View Our Active Projects →</a>
+      <br><a href="#verticals" class="btn-primary">View Our Active Projects →</a>
     </div>
     <div class="vision-img reveal-right">
-      <img src="smartcity2.png" alt="CIG Global Vision" onerror="this.src='https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=800'">
+      <a class="clickable-img" onclick="window.location.href='smart-city.html'" style="border-radius:18px;">
+        <img src="smartcity2.png" style="height:380px;object-fit:cover;" alt="CIG Vision" onerror="this.src='https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=800'">
+        <div class="explore-label">🏙️ Explore Smart Cities →</div>
+      </a>
     </div>
   </div>
 </section>
 
 <div class="gold-line"></div>
 
+<!-- VERTICALS -->
 <section class="verticals" id="verticals">
   <div class="section-tag reveal">Verticals of Innovation</div>
   <h2 class="section-title reveal">CIG Invests Across<br><span class="accent">High-Growth Sectors</span></h2>
   <div class="divider reveal"></div>
   <p class="section-sub reveal">CIG invests across high-growth sectors, turning global challenges into scalable, future-ready solutions.</p>
   <div class="verticals-grid">
-    <div class="vertical-card reveal">
-      <img src="zanzibar.avif" alt="Tourism" class="vertical-img" onerror="this.outerHTML='<div class=\'vertical-img-placeholder\'>✈️</div>'">
+
+    <div class="vertical-card reveal" onclick="window.location.href='zanzibar.html'" style="cursor:pointer;">
+      <a class="clickable-img"><img src="zanzibar.avif" class="vertical-img" alt="Tourism" onerror="this.src='https://images.unsplash.com/photo-1504432842672-1a79f78e4084?w=600'"><div class="explore-label">✈️ Explore Tourism →</div></a>
       <div class="vertical-body"><h3>🌍 Global Tourism Destinations</h3><p>Capturing long-term growth in luxury, experiential, and sustainable travel.</p><ul><li>Premium eco-resorts and coastal destinations</li><li>Integrated tourism corridors</li><li>Public–private partnerships</li><li>Cultural preservation models</li></ul><span class="tag">Zanzibar · Guatemala · Venezuela</span></div>
     </div>
-    <div class="vertical-card reveal">
-      <img src="smartcity1.png" alt="Smart City" class="vertical-img" onerror="this.outerHTML='<div class=\'vertical-img-placeholder\'>🏙️</div>'">
+
+    <div class="vertical-card reveal" onclick="window.location.href='smart-city.html'" style="cursor:pointer;">
+      <a class="clickable-img"><img src="smartcity1.png" class="vertical-img" alt="Smart City" onerror="this.src='https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=600'"><div class="explore-label">🏙️ Explore Smart Cities →</div></a>
       <div class="vertical-body"><h3>🏙️ Smart City Development</h3><p>Building future-ready cities through integrated digital infrastructure and sustainable design.</p><ul><li>Intelligent mobility systems</li><li>Renewable-powered districts</li><li>Digital governance platforms</li><li>Smart grids & IoT networks</li></ul><span class="tag">Africa · Asia · Americas</span></div>
     </div>
-    <div class="vertical-card reveal">
-      <img src="petrole.avif" alt="Energy" class="vertical-img" onerror="this.outerHTML='<div class=\'vertical-img-placeholder\'>⚡</div>'">
-      <div class="vertical-body"><h3>⚡ Sustainable Energy</h3><p>Accelerating the global transition to clean, reliable, and utility-scale renewable energy.</p><ul><li>Utility-scale solar farms</li><li>Hydro-electric generation</li><li>Hybrid renewable systems</li><li>Energy storage technologies</li></ul><span class="tag">Indonesia · Gabon · Africa</span></div>
+
+    <div class="vertical-card reveal" onclick="window.location.href='oil-gas.html'" style="cursor:pointer;">
+      <a class="clickable-img"><img src="petrole.avif" class="vertical-img" alt="Oil Gas" onerror="this.src='https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=600'"><div class="explore-label">🛢️ Explore Oil & Gas →</div></a>
+      <div class="vertical-body"><h3>🛢️ Oil & Gas</h3><p>Strategic investments in oil, gas, and clean energy across Southeast Asia, Africa, and the Middle East.</p><ul><li>Utility-scale solar farms</li><li>Hydro-electric generation</li><li>Hybrid renewable systems</li><li>Oil & gas operations</li></ul><span class="tag">Indonesia · Venezuela · Gabon · Dubai</span></div>
     </div>
-    <div class="vertical-card reveal">
-      <img src="maritime.png" alt="Maritime" class="vertical-img" onerror="this.outerHTML='<div class=\'vertical-img-placeholder\'>🚢</div>'">
+
+    <div class="vertical-card reveal" onclick="window.location.href='maritime-page.html'" style="cursor:pointer;">
+      <a class="clickable-img"><img src="maritime.png" class="vertical-img" alt="Maritime" onerror="this.src='https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=600'"><div class="explore-label">🚢 Explore Maritime →</div></a>
       <div class="vertical-body"><h3>🚢 Maritime Transport</h3><p>International freight fleet and port logistics connecting major world ports.</p><ul><li>Global freight operations</li><li>Port logistics management</li><li>Supply chain optimization</li><li>Strategic port partnerships</li></ul><span class="tag">Global Logistics</span></div>
     </div>
-    <div class="vertical-card reveal">
-      <img src="rail.png.png" alt="Rail" class="vertical-img" onerror="this.outerHTML='<div class=\'vertical-img-placeholder\'>🚂</div>'">
+
+    <div class="vertical-card reveal" onclick="window.location.href='americas-corridor.html'" style="cursor:pointer;">
+      <a class="clickable-img"><img src="rail.png.png" class="vertical-img" alt="Rail" onerror="this.src='https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=600'"><div class="explore-label">🚂 Explore Land & Rail →</div></a>
       <div class="vertical-body"><h3>🚂 Land & Rail Transport</h3><p>Modern rail and road solutions across strategic corridors in the Americas and Africa.</p><ul><li>Rail infrastructure development</li><li>Connected highway systems</li><li>Smart traffic management</li><li>Multimodal logistics hubs</li></ul><span class="tag">Infrastructure · Mobility</span></div>
     </div>
-    <div class="vertical-card reveal">
-      <img src="agri.jpg" alt="Agri-Food" class="vertical-img" onerror="this.outerHTML='<div class=\'vertical-img-placeholder\'>🌾</div>'">
+
+    <div class="vertical-card reveal" onclick="window.location.href='africa-agri.html'" style="cursor:pointer;">
+      <a class="clickable-img"><img src="agri.jpg" class="vertical-img" alt="Agri" onerror="this.src='https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600'"><div class="explore-label">🌾 Explore Agri-Food →</div></a>
       <div class="vertical-body"><h3>🌾 Agri-Food & Resources</h3><p>Agricultural investments and sustainable food supply chains in Africa and Latin America.</p><ul><li>Large-scale agricultural zones</li><li>Sustainable supply chains</li><li>Rural development programs</li><li>Food processing infrastructure</li></ul><span class="tag">Africa · Latin America</span></div>
     </div>
+
+    <div class="vertical-card reveal" onclick="window.location.href='ev-infrastructure.html'" style="cursor:pointer;">
+      <a class="clickable-img"><img src="automotive.jpg" class="vertical-img" alt="Automotive" onerror="this.src='https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=600'"><div class="explore-label">🚗 Explore Automotive →</div></a>
+      <div class="vertical-body"><h3>🚗 Automotive & Mobility</h3><p>CIG invests in next-generation automotive solutions and sustainable mobility ecosystems across emerging markets.</p><ul><li>Electric vehicle infrastructure</li><li>Autonomous transport networks</li><li>Connected mobility platforms</li><li>Fleet management systems</li></ul><span class="tag">Asia · Americas · Africa</span></div>
+    </div>
+
   </div>
 </section>
 
 <div class="gold-line"></div>
 
-<section class="tourism" id="tourism">
+<!-- 1. TOURISM -->
+<section class="sector-section dark" id="tourism">
   <div class="section-tag reveal">Global Tourism</div>
   <h2 class="section-title reveal">World-Class<br><span class="accent">Destinations</span></h2>
   <div class="divider reveal"></div>
   <p class="section-sub reveal">CIG shapes the future of tourism across high-potential regions, transforming natural and cultural assets into sustainable, world-class destinations.</p>
-  <div class="tourism-grid">
-    <div class="tourism-card reveal">
+  <div class="subsection-grid">
+    <div class="subsection-card reveal" onclick="window.location.href='zanzibar.html'">
       <img src="zanzibar.avif" alt="Zanzibar" onerror="this.src='https://images.unsplash.com/photo-1504432842672-1a79f78e4084?w=700'">
-      <div class="tourism-overlay"><h3>🇹🇿 Zanzibar, Tanzania</h3><p>Luxury coastal resorts, marine conservation zones & integrated tourism infrastructure</p></div>
+      <div class="subsection-overlay"><h3>🇹🇿 Zanzibar, Tanzania</h3><p>Luxury coastal resorts, marine conservation zones & integrated tourism infrastructure</p><div class="explore-tag">Explore <span class="explore-arrow">→</span></div></div>
     </div>
-    <div class="tourism-card reveal">
+    <div class="subsection-card reveal" onclick="window.location.href='guatemala.html'">
       <img src="guatemala.png" alt="Guatemala" onerror="this.src='https://images.unsplash.com/photo-1531968455001-5c5272a41129?w=700'">
-      <div class="tourism-overlay"><h3>🇬🇹 Guatemala</h3><p>Cultural tourism, Mayan heritage routes & sustainable adventure travel</p></div>
+      <div class="subsection-overlay"><h3>🇬🇹 Guatemala</h3><p>Cultural tourism, Mayan heritage routes & sustainable adventure travel</p><div class="explore-tag">Explore <span class="explore-arrow">→</span></div></div>
     </div>
-    <div class="tourism-card reveal">
+    <div class="subsection-card reveal" onclick="window.location.href='venezuela.html'">
       <img src="tanzania.avif" alt="Venezuela" onerror="this.src='https://images.unsplash.com/photo-1518182170546-07661fd94144?w=700'">
-      <div class="tourism-overlay"><h3>🇻🇪 Venezuela</h3><p>Eco-tourism corridors, coastal redevelopment & cultural heritage revitalization</p></div>
+      <div class="subsection-overlay"><h3>🇻🇪 Venezuela</h3><p>Eco-tourism corridors, coastal redevelopment & cultural heritage revitalization</p><div class="explore-tag">Explore <span class="explore-arrow">→</span></div></div>
     </div>
   </div>
 </section>
 
 <div class="gold-line"></div>
 
-<section class="energy" id="energy">
-  <div class="section-tag reveal">Sustainable Energy</div>
-  <h2 class="section-title reveal">Powering the Future with<br><span class="accent">Clean Energy</span></h2>
-  <div class="divider reveal"></div>
-  <p class="section-sub reveal">Accelerating the global transition to clean, reliable, and utility-scale renewable energy.</p>
-  <div class="energy-grid">
-    <div class="energy-card reveal"><div class="energy-icon">☀️</div><h3>Utility-Scale Solar</h3><p>Large-scale solar farms integrated with national grids across Southeast Asia.</p></div>
-    <div class="energy-card reveal"><div class="energy-icon">💧</div><h3>Hydro-Electric Power</h3><p>Hydro-electric corridors supporting regional energy security across Africa.</p></div>
-    <div class="energy-card reveal"><div class="energy-icon">🔋</div><h3>Energy Storage & Grids</h3><p>Advanced grid stabilization and energy storage solutions for industrial zones.</p></div>
-    <div class="energy-card reveal"><div class="energy-icon">🛢️</div><h3>Oil & Gas Operations</h3><p>Strategic investments in Indonesia, Venezuela, Gabon, and Dubai.</p></div>
-  </div>
-</section>
-
-<div class="gold-line"></div>
-
-<section class="smartcity" id="smartcity">
+<!-- 2. SMART CITY -->
+<section class="sector-section darker" id="smartcity">
   <div class="section-tag reveal">Smart City Innovation</div>
   <h2 class="section-title reveal">Building<br><span class="accent">Tomorrow's Cities</span></h2>
   <div class="divider reveal"></div>
   <div class="smartcity-inner">
     <div class="smartcity-img reveal-left">
-      <img src="smartcity3.png" alt="Smart City" onerror="this.src='https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=800'">
+      <a class="clickable-img" onclick="window.location.href='smart-city.html'" style="display:block;border-radius:18px;overflow:hidden;">
+        <img src="smartcity3.png" alt="Smart City" onerror="this.src='https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=800'">
+        <div class="explore-label">🏙️ Explore Smart Cities →</div>
+      </a>
     </div>
     <div class="smartcity-text reveal-right">
       <h3>Future-Ready Urban Ecosystems</h3>
@@ -374,95 +394,188 @@ footer nav a:hover{color:var(--gold);}
         <li>E-governance & digital public services</li>
         <li>Smart grids & resilient infrastructure</li>
       </ul>
-      <br>
-      <p style="color:var(--gold);font-size:0.88em;">📍 Active in Zanzibar · Tanzania · Latin America</p>
+      <br><p style="color:var(--gold);font-size:0.88em;">📍 Active in Asia</p>
+    </div>
+  </div>
+  <div class="subsection-grid" style="margin-top:52px;">
+    <div class="subsection-card reveal" onclick="window.location.href='smart-city.html'">
+      <img src="smartcity1.png" alt="Smart City 1" onerror="this.src='https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?w=700'">
+      <div class="subsection-overlay"></div>
+    </div>
+    <div class="subsection-card reveal" onclick="window.location.href='smart-city.html'">
+      <img src="smartcity2.png" alt="Smart City 2" onerror="this.src='https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=700'">
+      <div class="subsection-overlay"></div>
+    </div>
+    <div class="subsection-card reveal" onclick="window.location.href='smart-city.html'">
+      <img src="smartcity3.png" alt="Smart City 3" onerror="this.src='https://images.unsplash.com/photo-1515859005217-8a1f08870f59?w=700'">
+      <div class="subsection-overlay"></div>
     </div>
   </div>
 </section>
 
 <div class="gold-line"></div>
 
-<section class="presence" id="presence">
+<!-- 3. OIL & GAS -->
+<section class="sector-section dark" id="energy">
+  <div class="section-tag reveal">Oil & Gas</div>
+  <h2 class="section-title reveal">Strategic Energy<br><span class="accent">Operations & Investments</span></h2>
+  <div class="divider reveal"></div>
+  <p class="section-sub reveal">CIG accelerates the global energy transition while maintaining strategic oil and gas operations across Southeast Asia, Africa, and the Middle East.</p>
+  <div class="energy-grid" style="margin-top:32px;">
+    <div class="energy-card reveal"><div class="energy-icon">☀️</div><h3>Utility-Scale Solar</h3><p>Large-scale solar farms integrated with national grids across Southeast Asia.</p></div>
+    <div class="energy-card reveal"><div class="energy-icon">💧</div><h3>Hydro-Electric Power</h3><p>Hydro-electric corridors supporting regional energy security across Africa.</p></div>
+    <div class="energy-card reveal"><div class="energy-icon">🔋</div><h3>Energy Storage & Grids</h3><p>Advanced grid stabilization and energy storage solutions for industrial zones.</p></div>
+    <div class="energy-card reveal"><div class="energy-icon">🛢️</div><h3>Oil & Gas Operations</h3><p>Strategic investments in Indonesia, Venezuela, Gabon, and Dubai.</p></div>
+  </div>
+  <div class="subsection-grid" style="margin-top:52px;">
+    <div class="subsection-card reveal" onclick="window.location.href='oil-gas.html'">
+      <img src="oilgas1.jpg" alt="Indonesia" onerror="this.src='https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=700'">
+      <div class="subsection-overlay"><h3>🇮🇩 Indonesia</h3><p>Smart city development & renewable energy expansion across the archipelago</p><div class="explore-tag">Explore <span class="explore-arrow">→</span></div></div>
+    </div>
+    <div class="subsection-card reveal" onclick="window.location.href='oil-gas.html'">
+      <img src="oilgas2.jpg" alt="Gabon" onerror="this.src='https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=700'">
+      <div class="subsection-overlay"><h3>🇬🇦 Gabon</h3><p>Oil & gas extraction and renewable energy transition programs</p><div class="explore-tag">Explore <span class="explore-arrow">→</span></div></div>
+    </div>
+    <div class="subsection-card reveal" onclick="window.location.href='oil-gas.html'">
+      <img src="oilgas3.jpg" alt="Dubai" onerror="this.src='https://images.unsplash.com/photo-1518546305927-5a555bb7020d?w=700'">
+      <div class="subsection-overlay"><h3>🇦🇪 Dubai, UAE</h3><p>Energy finance, clean technology investment & regional hub operations</p><div class="explore-tag">Explore <span class="explore-arrow">→</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-line"></div>
+
+<!-- 4. MARITIME -->
+<section class="sector-section darker" id="maritime">
+  <div class="section-tag reveal">Maritime Transport</div>
+  <h2 class="section-title reveal">Global Port &<br><span class="accent">Freight Operations</span></h2>
+  <div class="divider reveal"></div>
+  <p class="section-sub reveal">CIG operates an international freight fleet and port logistics network connecting major world ports with efficiency, reliability, and scale.</p>
+  <div class="subsection-grid">
+    <div class="subsection-card reveal" onclick="window.location.href='atlantic-corridor.html'">
+      <img src="maritime1.jpg" alt="Atlantic" onerror="this.src='https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=700'">
+      <div class="subsection-overlay"><h3>🌊 Atlantic Corridor</h3><p>Strategic freight routes connecting West Africa, Americas, and European ports</p><div class="explore-tag">Explore <span class="explore-arrow">→</span></div></div>
+    </div>
+    <div class="subsection-card reveal" onclick="window.location.href='indian-ocean.html'">
+      <img src="maritime2.jpg" alt="Indian Ocean" onerror="this.src='https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=700'">
+      <div class="subsection-overlay"><h3>🌏 Indian Ocean Route</h3><p>Port logistics and supply chains linking East Africa, Asia, and the Middle East</p><div class="explore-tag">Explore <span class="explore-arrow">→</span></div></div>
+    </div>
+    <div class="subsection-card reveal" onclick="window.location.href='pacific-ops.html'">
+      <img src="maritime3.jpg" alt="Pacific" onerror="this.src='https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=700'">
+      <div class="subsection-overlay"><h3>🌊 Pacific Operations</h3><p>Southeast Asia freight and port management across strategic Pacific routes</p><div class="explore-tag">Explore <span class="explore-arrow">→</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-line"></div>
+
+<!-- 5. LAND & RAIL -->
+<section class="sector-section dark" id="landrail">
+  <div class="section-tag reveal">Land & Rail Transport</div>
+  <h2 class="section-title reveal">Connected<br><span class="accent">Infrastructure Corridors</span></h2>
+  <div class="divider reveal"></div>
+  <p class="section-sub reveal">Modern rail and road solutions across strategic corridors in the Americas, Africa, and Asia.</p>
+  <div class="subsection-grid">
+    <div class="subsection-card reveal" onclick="window.location.href='americas-corridor.html'">
+      <img src="rail1.jpg" alt="Americas" onerror="this.src='https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=700'">
+      <div class="subsection-overlay"><h3>🌎 Americas Corridor</h3><p>Rail and highway networks connecting North and Latin America's key trade hubs</p><div class="explore-tag">Explore <span class="explore-arrow">→</span></div></div>
+    </div>
+    <div class="subsection-card reveal" onclick="window.location.href='africa-rail.html'">
+      <img src="rail2.jpg" alt="Africa Rail" onerror="this.src='https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=700'">
+      <div class="subsection-overlay"><h3>🌍 Africa Rail Network</h3><p>Trans-African rail development supporting resource extraction and economic integration</p><div class="explore-tag">Explore <span class="explore-arrow">→</span></div></div>
+    </div>
+    <div class="subsection-card reveal" onclick="window.location.href='asia-connect.html'">
+      <img src="rail3.jpg" alt="Asia Connect" onerror="this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=700'">
+      <div class="subsection-overlay"><h3>🌏 Asia Connect</h3><p>Smart highways and connected rail systems across Southeast Asian emerging markets</p><div class="explore-tag">Explore <span class="explore-arrow">→</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-line"></div>
+
+<!-- 6. AGRICULTURE -->
+<section class="sector-section darker" id="agriculture">
+  <div class="section-tag reveal">Agri-Food & Resources</div>
+  <h2 class="section-title reveal">Sustainable<br><span class="accent">Food Systems</span></h2>
+  <div class="divider reveal"></div>
+  <p class="section-sub reveal">Agricultural investments and sustainable food supply chains in Africa and Latin America for food sovereignty and economic resilience.</p>
+  <div class="subsection-grid">
+    <div class="subsection-card reveal" onclick="window.location.href='africa-agri.html'">
+      <img src="agri1.jpg" alt="Africa Farms" onerror="this.src='https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=700'">
+      <div class="subsection-overlay"><h3>🌍 Africa Agricultural Zones</h3><p>Large-scale farming operations and food processing infrastructure across sub-Saharan Africa</p><div class="explore-tag">Explore <span class="explore-arrow">→</span></div></div>
+    </div>
+    <div class="subsection-card reveal" onclick="window.location.href='latam-supply.html'">
+      <img src="agri2.jpg" alt="Latin America" onerror="this.src='https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=700'">
+      <div class="subsection-overlay"><h3>🌎 Latin America Supply Chain</h3><p>Integrated agri-food supply chains from farm to export across Ecuador, Peru, and Venezuela</p><div class="explore-tag">Explore <span class="explore-arrow">→</span></div></div>
+    </div>
+    <div class="subsection-card reveal" onclick="window.location.href='processing-hubs.html'">
+      <img src="agri3.jpg" alt="Processing" onerror="this.src='https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=700'">
+      <div class="subsection-overlay"><h3>🏭 Processing & Export Hubs</h3><p>Modern food processing facilities and cold chain logistics for international export markets</p><div class="explore-tag">Explore <span class="explore-arrow">→</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-line"></div>
+
+<!-- 7. AUTOMOTIVE -->
+<section class="sector-section dark" id="automotive">
+  <div class="section-tag reveal">Automotive & Mobility</div>
+  <h2 class="section-title reveal">Next-Generation<br><span class="accent">Mobility Solutions</span></h2>
+  <div class="divider reveal"></div>
+  <p class="section-sub reveal">CIG invests in next-generation automotive solutions and sustainable mobility ecosystems across emerging markets.</p>
+  <div class="subsection-grid">
+    <div class="subsection-card reveal" onclick="window.location.href='ev-infrastructure.html'">
+      <img src="auto1.jpg" alt="EV" onerror="this.src='https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=700'">
+      <div class="subsection-overlay"><h3>⚡ EV Infrastructure</h3><p>Electric vehicle charging networks and battery technology across high-growth urban markets</p><div class="explore-tag">Explore <span class="explore-arrow">→</span></div></div>
+    </div>
+    <div class="subsection-card reveal" onclick="window.location.href='fleet-management.html'">
+      <img src="auto2.jpg" alt="Fleet" onerror="this.src='https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=700'">
+      <div class="subsection-overlay"><h3>🚙 Fleet Management</h3><p>Smart fleet operations and logistics management platforms for governments and private sector</p><div class="explore-tag">Explore <span class="explore-arrow">→</span></div></div>
+    </div>
+    <div class="subsection-card reveal" onclick="window.location.href='autonomous-transport.html'">
+      <img src="auto3.jpg" alt="Autonomous" onerror="this.src='https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700'">
+      <div class="subsection-overlay"><h3>🤖 Autonomous Transport</h3><p>Self-driving technology pilots and connected mobility platforms in emerging smart cities</p><div class="explore-tag">Explore <span class="explore-arrow">→</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-line"></div>
+
+<!-- GLOBAL PRESENCE -->
+<section style="padding:96px 64px;background:var(--dark);" id="presence">
   <div class="section-tag reveal">Our Global Footprint</div>
   <h2 class="section-title reveal">CIG Around<br><span class="accent">the World</span></h2>
   <div class="divider reveal"></div>
   <p class="section-sub reveal">Present on four continents, our offices and operations cover key high-growth markets.</p>
   <div class="presence-grid">
-    <div class="region-card reveal">
-      <div class="region-placeholder">🌏</div>
-      <div class="region-body"><h3>Asia & Middle East</h3><ul class="country-list"><li>Malaysia — Headquarters (KL)</li><li>Indonesia — Oil & Gas</li><li>Dubai — Energy & Finance</li></ul></div>
-    </div>
-    <div class="region-card reveal">
-      <div class="region-placeholder">🌎</div>
-      <div class="region-body"><h3>North America</h3><ul class="country-list"><li>Canada — Regional Office</li><li>United States — Regional Office</li></ul></div>
-    </div>
-    <div class="region-card reveal">
-      <div class="region-placeholder">🌎</div>
-      <div class="region-body"><h3>Latin & Central America</h3><ul class="country-list"><li>Venezuela — Oil & Gas & Tourism</li><li>Ecuador — Operations</li><li>Peru — Operations</li><li>Guatemala — Tourism</li><li>Costa Rica — Tourism</li></ul></div>
-    </div>
-    <div class="region-card reveal">
-      <div class="region-placeholder">🌍</div>
-      <div class="region-body"><h3>Africa</h3><ul class="country-list"><li>Tanzania & Zanzibar — Smart City & Tourism</li><li>Gabon — Oil & Gas</li><li>Madagascar — Operations</li><li>DR Congo — Development</li><li>Central African Republic</li><li>Niger — Resources</li><li>Guinea Conakry — Resources</li></ul></div>
-    </div>
+    <div class="region-card reveal"><div class="region-placeholder">🌏</div><div class="region-body"><h3>Asia & Middle East</h3><ul class="country-list"><li>Malaysia — Headquarters (KL)</li><li>Indonesia — Smart City Development</li><li>Dubai — Energy & Finance</li></ul></div></div>
+    <div class="region-card reveal"><div class="region-placeholder">🌎</div><div class="region-body"><h3>North America</h3><ul class="country-list"><li>Canada — Regional Office</li><li>United States — Regional Office</li></ul></div></div>
+    <div class="region-card reveal"><div class="region-placeholder">🌎</div><div class="region-body"><h3>Latin & Central America</h3><ul class="country-list"><li>Venezuela — Oil & Gas & Tourism</li><li>Ecuador — Trading & Automotive</li><li>Peru — Operations</li><li>Guatemala — Tourism</li><li>Costa Rica — Tourism</li></ul></div></div>
+    <div class="region-card reveal"><div class="region-placeholder">🌍</div><div class="region-body"><h3>Africa</h3><ul class="country-list"><li>Tanzania & Zanzibar — Smart City & Tourism</li><li>Gabon — Oil & Gas</li><li>Madagascar — Operations</li><li>DR Congo — Development</li><li>Central African Republic</li><li>Niger — Resources</li><li>Guinea Conakry — Resources</li></ul></div></div>
   </div>
 </section>
 
 <div class="gold-line"></div>
 
 <!-- LEADERSHIP -->
-<section class="leadership" id="leadership">
+<section style="padding:96px 64px;background:#060a14;" id="leadership">
   <div class="section-tag reveal">Leadership</div>
   <h2 class="section-title reveal">Our <span class="accent">Executive Team</span></h2>
   <div class="divider reveal"></div>
   <p class="section-sub reveal">CIG is led by a team of seasoned executives with deep expertise across global markets, finance, infrastructure, and regional development.</p>
   <div class="leadership-grid">
-
-    <div class="leader-card reveal">
-      <div class="leader-avatar">WN</div>
-      <div class="leader-role">Chairman & Chief Executive Officer</div>
-      <div class="leader-name">William O Nelson</div>
-      <div class="leader-desc">Leading CIG's global strategy and expansion across Asia, the Americas, the Middle East, and Africa. Driving sustainable infrastructure development and high-growth investment across four continents.</div>
-      <div class="leader-location">📍 Kuala Lumpur, Malaysia</div>
-    </div>
-
-    <div class="leader-card reveal">
-      <div class="leader-avatar">WL</div>
-      <div class="leader-role">Chief Financial Officer & Chief Strategy Officer</div>
-      <div class="leader-name">Wong Loi Onn</div>
-      <div class="leader-desc">Overseeing CIG's financial strategy, investment structuring, and capital allocation across all global operations. Expert in blended finance models and emerging market investment frameworks.</div>
-      <div class="leader-location">📍 Kuala Lumpur, Malaysia</div>
-    </div>
-
-    <div class="leader-card reveal">
-      <div class="leader-avatar">GW</div>
-      <div class="leader-role">Chief Operating Officer</div>
-      <div class="leader-name">Mr. Gavin Wong</div>
-      <div class="leader-desc">Overseeing day-to-day global operations across all CIG divisions, ensuring seamless execution of projects in transport, energy, tourism, and smart city development across four continents.</div>
-      <div class="leader-location">📍 Kuala Lumpur, Malaysia</div>
-    </div>
-
-    <div class="leader-card reveal">
-      <div class="leader-avatar">JK</div>
-      <div class="leader-role">Regional Director — North America & Latin America</div>
-      <div class="leader-name">Jean Daniel Koffi</div>
-      <div class="leader-desc">Leading CIG's regional operations and business development across North America and Latin America, including strategic partnerships in Canada, the United States, Ecuador, Peru, Guatemala, Venezuela, and Costa Rica.</div>
-      <div class="leader-location">📍 North America & Latin America</div>
-    </div>
-
-    <div class="leader-card reveal">
-      <div class="leader-avatar">WW</div>
-      <div class="leader-role">Marketing Manager</div>
-      <div class="leader-name">Wendy Wong</div>
-      <div class="leader-desc">Driving CIG's global brand strategy, digital presence, and communications across all markets. Overseeing marketing campaigns, investor relations content, and CIG's positioning across four continents.</div>
-      <div class="leader-location">📍 Kuala Lumpur, Malaysia</div>
-    </div>
-
+    <div class="leader-card reveal"><div class="leader-avatar">WN</div><div class="leader-role">Chairman & Chief Executive Officer</div><div class="leader-name">William O Nelson</div><div class="leader-desc">Leading CIG's global strategy and expansion across Asia, the Americas, the Middle East, and Africa.</div><div class="leader-location">📍 Kuala Lumpur, Malaysia</div></div>
+    <div class="leader-card reveal"><div class="leader-avatar">WL</div><div class="leader-role">Chief Financial Officer & Chief Strategy Officer</div><div class="leader-name">Wong Loi Onn</div><div class="leader-desc">Overseeing CIG's financial strategy, investment structuring, and capital allocation across all global operations.</div><div class="leader-location">📍 Kuala Lumpur, Malaysia</div></div>
+    <div class="leader-card reveal"><div class="leader-avatar">GW</div><div class="leader-role">Chief Operating Officer</div><div class="leader-name">Mr. Gavin Wong</div><div class="leader-desc">Overseeing day-to-day global operations across all CIG divisions ensuring seamless execution of projects.</div><div class="leader-location">📍 Kuala Lumpur, Malaysia</div></div>
+    <div class="leader-card reveal"><div class="leader-avatar">JK</div><div class="leader-role">Regional Director — North America & Latin America</div><div class="leader-name">Jean Daniel Koffi</div><div class="leader-desc">Leading CIG's regional operations and business development across North America and Latin America.</div><div class="leader-location">📍 North America & Latin America</div></div>
+    <div class="leader-card reveal"><div class="leader-avatar">WW</div><div class="leader-role">Marketing Manager</div><div class="leader-name">Wendy Wong</div><div class="leader-desc">Driving CIG's global brand strategy, digital presence, and communications across all markets.</div><div class="leader-location">📍 Kuala Lumpur, Malaysia</div></div>
   </div>
 </section>
 
 <div class="gold-line"></div>
 
-<section class="value" id="value">
+<!-- WHY CIG -->
+<section style="padding:96px 64px;background:var(--dark);" id="value">
   <div class="section-tag reveal">Why CIG</div>
   <h2 class="section-title reveal">The <span class="accent">CIG Difference</span></h2>
   <div class="divider reveal"></div>
@@ -479,13 +592,17 @@ footer nav a:hover{color:var(--gold);}
 
 <div class="gold-line"></div>
 
-<section class="hq" id="hq">
+<!-- HQ -->
+<section style="padding:96px 64px;background:#060a14;" id="hq">
   <div class="section-tag reveal">Headquarters</div>
   <h2 class="section-title reveal">Kuala Lumpur,<br><span class="accent">Malaysia</span></h2>
   <div class="divider reveal"></div>
   <div class="hq-inner">
     <div class="hq-img reveal-left">
-      <img src="hq.png" alt="CIG Headquarters" onerror="this.src='https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=800'">
+      <a class="clickable-img" onclick="window.location.href='headquarters.html'" style="display:block;border-radius:18px;overflow:hidden;">
+        <img src="hq.png" alt="CIG HQ" onerror="this.src='https://images.unsplash.com/photo-1596422846543-75c6fc197f07?w=800'">
+        <div class="explore-label">🏢 Explore Our HQ →</div>
+      </a>
     </div>
     <div class="hq-text reveal-right">
       <h3>The Heart of CIG's Global Operations</h3>
@@ -503,7 +620,8 @@ footer nav a:hover{color:var(--gold);}
 
 <div class="gold-line"></div>
 
-<section class="contact" id="contact">
+<!-- CONTACT -->
+<section style="padding:96px 64px;background:linear-gradient(135deg,#060a14,var(--navy));" id="contact">
   <div class="section-tag reveal">Get In Touch</div>
   <h2 class="section-title reveal">Partners &amp;<br><span class="accent">Investors</span></h2>
   <div class="divider reveal"></div>
@@ -514,25 +632,14 @@ footer nav a:hover{color:var(--gold);}
       <div class="contact-item"><div class="contact-icon">📍</div><div><p>Headquarters<br><strong>Kuala Lumpur, Malaysia</strong><br><span style="font-size:0.82em;color:#556070;">Regional offices: Americas · Africa · Middle East</span></p></div></div>
       <div class="contact-item"><div class="contact-icon">🌐</div><div><p>Global Presence<br><strong>4 Continents · 20+ Countries</strong></p></div></div>
       <div class="contact-item"><div class="contact-icon">✉️</div><div><p>General Email<br><strong>info@cig-global.com</strong><br><span style="font-size:0.82em;color:#556070;">For investor inquiries, please reference your region and sector of interest.</span></p></div></div>
-      <div class="contact-item"><div class="contact-icon">🏢</div><div><p>Sectors<br><strong>Transport · Energy · Tourism · Smart Cities</strong></p></div></div>
+      <div class="contact-item"><div class="contact-icon">🏢</div><div><p>Sectors<br><strong>Transport · Energy · Tourism · Smart Cities · Automotive</strong></p></div></div>
     </div>
     <div class="form reveal-right">
       <input type="text" placeholder="Full name">
       <input type="text" placeholder="Your company / organization">
       <input type="email" placeholder="Your email address">
       <input type="text" placeholder="Your country">
-      <select>
-        <option>Sector of interest</option>
-        <option>Maritime Transport</option>
-        <option>Rail / Land Transport</option>
-        <option>Oil & Gas</option>
-        <option>Sustainable Energy</option>
-        <option>Tourism</option>
-        <option>Smart Cities</option>
-        <option>Agri-Food</option>
-        <option>General Partnership</option>
-        <option>Investment Opportunity</option>
-      </select>
+      <select><option>Sector of interest</option><option>Tourism</option><option>Smart Cities</option><option>Oil & Gas</option><option>Maritime Transport</option><option>Land & Rail Transport</option><option>Agri-Food & Resources</option><option>Automotive & Mobility</option><option>General Partnership</option><option>Investment Opportunity</option></select>
       <textarea placeholder="Your message or partnership inquiry..."></textarea>
       <button class="submit-btn">Send Request →</button>
     </div>
@@ -542,24 +649,12 @@ footer nav a:hover{color:var(--gold);}
 <footer>
   <div class="footer-left">
     <img src="logo.png" alt="CIG" onerror="this.style.display='none'">
-    <div>
-      <div class="footer-brand">Coordinate International Global</div>
-      <div class="footer-brand"><p>Headquarters: Kuala Lumpur, Malaysia</p></div>
-    </div>
+    <div><div class="footer-brand">Coordinate International Global</div><div class="footer-brand"><p>Headquarters: Kuala Lumpur, Malaysia</p></div></div>
   </div>
   <nav>
-    <a href="#vision">Vision</a>
-    <a href="#verticals">Sectors</a>
-    <a href="#tourism">Tourism</a>
-    <a href="#energy">Energy</a>
-    <a href="#smartcity">Smart Cities</a>
-    <a href="#presence">Global Presence</a>
-    <a href="#leadership">Leadership</a>
-    <a href="#contact">Contact</a>
+    <a href="#vision">Vision</a><a href="#verticals">Sectors</a><a href="#tourism">Tourism</a><a href="#smartcity">Smart Cities</a><a href="#energy">Energy</a><a href="#maritime">Maritime</a><a href="#landrail">Land & Rail</a><a href="#agriculture">Agriculture</a><a href="#automotive">Automotive</a><a href="#presence">Global Presence</a><a href="#leadership">Leadership</a><a href="#contact">Contact</a>
   </nav>
-  <div class="footer-copy">
-    © 2026 Coordinate International Global · All Rights Reserved · 🌐 Asia · Americas · Africa · Middle East
-  </div>
+  <div class="footer-copy">© 2026 Coordinate International Global · All Rights Reserved · 🌐 Asia · Americas · Africa · Middle East</div>
 </footer>
 
 <script>
@@ -571,7 +666,7 @@ function animateFollower(){followerX+=(mouseX-followerX)*0.12;followerY+=(mouseY
 animateFollower();
 document.addEventListener('mousedown',()=>{cursor.classList.add('click');follower.classList.add('click');});
 document.addEventListener('mouseup',()=>{cursor.classList.remove('click');follower.classList.remove('click');});
-document.querySelectorAll('a,button,.vertical-card,.tourism-card,.value-card,.energy-card,.region-card,.leader-card').forEach(el=>{
+document.querySelectorAll('a,button,.vertical-card,.subsection-card,.value-card,.energy-card,.region-card,.leader-card,.clickable-img').forEach(el=>{
   el.addEventListener('mouseenter',()=>{cursor.style.transform='translate(-50%,-50%) scale(2)';follower.style.transform='translate(-50%,-50%) scale(1.5)';});
   el.addEventListener('mouseleave',()=>{cursor.style.transform='translate(-50%,-50%) scale(1)';follower.style.transform='translate(-50%,-50%) scale(1)';});
 });
@@ -587,8 +682,7 @@ const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isInt
 reveals.forEach(r=>observer.observe(r));
 const canvas=document.getElementById('particleCanvas');
 if(canvas){
-  const ctx=canvas.getContext('2d');
-  canvas.width=window.innerWidth;canvas.height=window.innerHeight;
+  const ctx=canvas.getContext('2d');canvas.width=window.innerWidth;canvas.height=window.innerHeight;
   const particles=[];
   for(let i=0;i<60;i++){particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*2+0.5,dx:(Math.random()-0.5)*0.4,dy:(Math.random()-0.5)*0.4,o:Math.random()*0.4+0.1});}
   function drawParticles(){ctx.clearRect(0,0,canvas.width,canvas.height);particles.forEach(p=>{ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=`rgba(201,168,76,${p.o})`;ctx.fill();p.x+=p.dx;p.y+=p.dy;if(p.x<0||p.x>canvas.width)p.dx*=-1;if(p.y<0||p.y>canvas.height)p.dy*=-1;});requestAnimationFrame(drawParticles);}
@@ -601,37 +695,17 @@ async function loadTicker(){
     const cryptoRes=await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,tron,binancecoin,ripple,solana&vs_currencies=usd&include_24hr_change=true');
     const crypto=await cryptoRes.json();
     const cryptoMap={bitcoin:'BTC',ethereum:'ETH',tron:'TRX',binancecoin:'BNB',ripple:'XRP',solana:'SOL'};
-    for(const[id,symbol] of Object.entries(cryptoMap)){
-      if(crypto[id]){
-        const price=crypto[id].usd;
-        const change=crypto[id].usd_24h_change?.toFixed(2);
-        const up=parseFloat(change)>=0;
-        items.push({name:symbol,value:'$'+price.toLocaleString('en-US',{maximumFractionDigits:2}),change:(up?'▲':'▼')+Math.abs(change)+'%',up});
-      }
-    }
+    for(const[id,symbol] of Object.entries(cryptoMap)){if(crypto[id]){const price=crypto[id].usd;const change=crypto[id].usd_24h_change?.toFixed(2);const up=parseFloat(change)>=0;items.push({name:symbol,value:'$'+price.toLocaleString('en-US',{maximumFractionDigits:2}),change:(up?'▲':'▼')+Math.abs(change)+'%',up});}}
     const fxRes=await fetch('https://open.er-api.com/v6/latest/USD');
     const fx=await fxRes.json();
-    const pairs=[
-      {to:'EUR',label:'EUR/USD'},{to:'CNY',label:'USD/CNY'},{to:'CAD',label:'USD/CAD'},
-      {to:'MYR',label:'USD/MYR'},{to:'GBP',label:'GBP/USD'},{to:'JPY',label:'USD/JPY'},
-      {to:'XOF',label:'USD/CFA'},{to:'AED',label:'USD/AED'}
-    ];
-    for(const pair of pairs){
-      const rate=fx.rates[pair.to];
-      if(rate)items.push({name:pair.label,value:rate.toFixed(4),change:'',up:true});
-    }
+    const pairs=[{to:'EUR',label:'EUR/USD'},{to:'CNY',label:'USD/CNY'},{to:'CAD',label:'USD/CAD'},{to:'MYR',label:'USD/MYR'},{to:'GBP',label:'GBP/USD'},{to:'JPY',label:'USD/JPY'},{to:'XOF',label:'USD/CFA'},{to:'AED',label:'USD/AED'}];
+    for(const pair of pairs){const rate=fx.rates[pair.to];if(rate)items.push({name:pair.label,value:rate.toFixed(4),change:'',up:true});}
     const inner=document.getElementById('tickerInner');
     if(!inner||!items.length)return;
-    let html='';
-    const all=[...items,...items];
-    for(const item of all){
-      html+=`<div class="ticker-item"><span class="ticker-name">${item.name}</span><span class="ticker-value">${item.value}</span>${item.change?`<span class="ticker-change ${item.up?'up':'down'}">${item.change}</span>`:''}</div>`;
-    }
+    let html='';const all=[...items,...items];
+    for(const item of all){html+=`<div class="ticker-item"><span class="ticker-name">${item.name}</span><span class="ticker-value">${item.value}</span>${item.change?`<span class="ticker-change ${item.up?'up':'down'}">${item.change}</span>`:''}</div>`;}
     inner.innerHTML=html;
-  }catch(e){
-    const inner=document.getElementById('tickerInner');
-    if(inner)inner.innerHTML='<span style="color:#6080a0;padding:0 24px;line-height:44px;font-size:0.82em;">Active markets: Southeast Asia · Latin America · Africa · Middle East</span>';
-  }
+  }catch(e){const inner=document.getElementById('tickerInner');if(inner)inner.innerHTML='<span style="color:#6080a0;padding:0 24px;line-height:44px;font-size:0.82em;">Active markets: Southeast Asia · Latin America · Africa · Middle East</span>';}
 }
 loadTicker();
 setInterval(loadTicker,60000);
